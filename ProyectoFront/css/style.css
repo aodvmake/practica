@@ -67,11 +67,12 @@ body{
 	position: fixed;
 	top: 0px;
 	left: 50px;
-	height: 140px;
+	height: 220px;
 }
 .navbar-brand img{
+	padding: 10px;
 	width: 200px;
-	height: 120px;
+	height: 210px;
 	object-fit: cover;
 }
 .img-MV{
@@ -112,6 +113,10 @@ body{
 		top: auto;
 		left: auto;
 		height: auto;
+	}
+	.navbar-brand img{
+		width: 120px;
+		height: 120px;
 	}
 	.lg-responsive-margin{
 		margin-top: 25px;
