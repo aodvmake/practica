@@ -88,6 +88,25 @@ body{
 	object-fit: cover;
 	border-radius: 7px;
 }
+.downRow{
+	position: absolute;
+	bottom:10px;
+	width: 100%;
+	z-index: 100;
+	cursor: pointer;
+	animation:downSlice 1s infinite;
+}
+.downRow p{
+	text-align: center!important;
+	font-size: 5rem!important;
+	color:var(--color-black)!important;
+	text-shadow: 5px 2px var(--color-white);
+}
+@keyframes downSlice{
+	0%{bottom:10px;}
+	50%{bottom:5px;}
+	100%{bottom:10px;}
+}
 .border-line{
 	border:1px solid var(--color-gray);
 	border-radius: 7px;
