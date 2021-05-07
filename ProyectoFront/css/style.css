@@ -51,7 +51,7 @@ body{
 .navbar{
 	position: fixed!important;
 	width: 100%!important;
-	z-index: 10!important;
+	z-index: 100!important;
 	height: 100px;
 }
 .modal-header{
@@ -93,7 +93,7 @@ body{
 	position: absolute;
 	bottom:30px;
 	width: 100%;
-	z-index: 100;
+	z-index: 99;
 	cursor: pointer;
 	animation:downSlice 1s infinite;
 }
