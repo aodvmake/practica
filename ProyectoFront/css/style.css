@@ -63,11 +63,13 @@ body{
 	font-family: 'Montserrat', sans-serif!important;
 }
 .navbar-brand{
-	background-color: var(--color-blue);
+	background-color: var(--color-white);
 	position: fixed;
 	top: 0px;
 	left: 50px;
 	height: 220px;
+	border:1px solid var(--color-gray);
+	border-radius: 17px;
 }
 .navbar-brand img{
 	padding: 10px;
