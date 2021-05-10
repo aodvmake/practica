@@ -4,11 +4,11 @@
 	    var email = $("#email").val()
 		var pass = $("#pass").val()
 
-			var parametros = {
+			var parametros =Object.freeze({
 				'email':email,
 				'pass':pass,
 				'request':'data',
-			};
+			});
 
 			$.ajax({
 				data: parametros,
@@ -28,8 +28,8 @@
 						//window.location.href="views/admin.php"
 						break;
 						case 'King':
-						//window.location.href="views/adminki.php"
-						alert('entro');
+						window.location.href="views/admin/homeAdmin.php"
+						//alert('entro');
 						break;
                         case 'Vacio':
 						//window.location.href="views/adminki.php"
