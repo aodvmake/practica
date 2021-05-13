@@ -21,7 +21,10 @@
 					$("#email").val("")
 					$("#pass").val("")
 						switch(response){
-						case 'Cliente':
+						case 'Empleado':
+						//window.location.href="views/cliente.php"
+						break;
+						case 'Almacenista':
 						//window.location.href="views/cliente.php"
 						break;
 						case 'Administrador':

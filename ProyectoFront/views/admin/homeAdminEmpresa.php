@@ -5,7 +5,7 @@
 <section class="container pt-5 pb-5">
 	<div class="row">
 		<div class="col-lg-6">
-			<input type="search" name="" placeholder="Buscar empresa" class="form-control">
+			<input type="search" name="" id="busqueda" placeholder="Buscar empresa" class="form-control">
 		</div>
 		<div class="col-lg-3">
 			<button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#addEmpresa">Agregar una empresa</button>
@@ -14,11 +14,14 @@
 			<button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#bajasTemporales">Baja temporal</button>
 		</div>
 	</div>
-	<div class="table-responsive">
-		<table class="table table-striped">
+
+<!--empresa-->
+	<div class="table-responsive" id="resultados">
+	<!--	
+    <table class="table table-striped">
 			<thead>
 				<tr>
-					<th></th>
+					<th>Nombre de la empresas</th>
 					<th></th>
 					<th></th>
 				</tr>
@@ -51,7 +54,10 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
+	-->
+  </div>
+
+
 </section>
 
 <!--Modals-->
@@ -82,6 +88,7 @@
       <div class="modal-body">
         <input type="search" name="" placeholder="Buscar bajas temporales" class="form-control">
         <br>
+
         <div class="table-responsive">
         	<table class="table table-striped">
         		<thead>
@@ -118,6 +125,9 @@
         		</tbody>
         	</table>
         </div>
+
+
+
       </div>
     </div>
   </div>
@@ -192,3 +202,4 @@
 <?php 
   include('../bases/baseF.php');
 ?>
+<script type="text/javascript" src="../../js/buscarempresa.js"></script>
