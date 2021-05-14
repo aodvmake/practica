@@ -5,8 +5,8 @@ include("../models/consulempresa.php");
 class datos{
  function save(){
   $re=$_POST['re'];
-  $obj=new modeloguardar();
-  echo $obj->guardar($re);
+  $obj=new modeloconsultar();
+  echo $obj->consultar($re);
  }
 }
 $variable=new datos();

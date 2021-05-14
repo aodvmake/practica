@@ -17,44 +17,7 @@
 
 <!--empresa-->
 	<div class="table-responsive" id="resultados">
-	<!--	
-    <table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Nombre de la empresas</th>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Nombre de la empresa</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la empresa</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la empresa</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la empresa</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la empresa</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa">Dar de baja</button></td>
-				</tr>
-			</tbody>
-		</table>
-	-->
+
   </div>
 
 
@@ -72,7 +35,7 @@
         <h3 class="text-center">¿Seguro que desea dar de baja temporal la empresa?</h3>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Aceptar</button>
+        <button type="button" class="btn btn-primary" id="baja" value="">Aceptar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -159,7 +122,7 @@
 	  	</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="guardar">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -176,23 +139,23 @@
       <div class="modal-body">
         <div class="mb-3">
 	    	<label for="nombre" class="form-label">Nombre de la empresa</label>
-	    	<input type="text" class="form-control" id="nombre">
+	    	<input type="text" class="form-control" id="e-nombre">
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="telefono" class="form-label">Telefono</label>
-	    	<input type="number" class="form-control" id="telefono">
+	    	<input type="number" class="form-control" id="e-telefono">
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="email" class="form-label">Correo de la empresa</label>
-	    	<input type="email" class="form-control" id="email">
+	    	<input type="email" class="form-control" id="e-email">
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="ubicacion" class="form-label">Ubicación</label>
-	    	<input type="text" class="form-control" id="ubicacion">
+	    	<input type="text" class="form-control" id="e-ubicacion">
 	  	</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="guardar-e" value="">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -203,3 +166,6 @@
   include('../bases/baseF.php');
 ?>
 <script type="text/javascript" src="../../js/buscarempresa.js"></script>
+<script type="text/javascript" src="../../js/guardarempresa.js"></script>
+<script type="text/javascript" src="../../js/editarempresa.js"></script>
+<script type="text/javascript" src="../../js/editarempresamodal.js"></script>

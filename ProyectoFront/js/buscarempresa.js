@@ -11,7 +11,7 @@
   		})
   	}
   	$(document).on('keyup','#busqueda',function(){
-  		var valorBusqueda=$(this).val();
+  		var valorBusqueda=Object.freeze($(this).val());
   		if (valorBusqueda!=""){
   			obtener_registro(valorBusqueda);
   		}
