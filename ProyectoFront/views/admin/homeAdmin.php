@@ -13,10 +13,10 @@
 					<a href="#" class="no-underline">
 						<div class="card card-acceso">
 							<div class="card-body p-0 m-0 img-acceso">
-								<img src="../../img/accesoDefault.png">
+								<img src="../../img/icon/equipo.png">
 							</div>
 							<div class="card-footer">
-								Acceso directo
+								Equipo
 							</div>
 						</div>
 					</a>	
@@ -25,10 +25,10 @@
 					<a href="#" class="no-underline">
 						<div class="card card-acceso">
 							<div class="card-body p-0 m-0 img-acceso">
-								<img src="../../img/accesoDefault.png">
+								<img src="../../img/icon/inventario.png">
 							</div>
 							<div class="card-footer">
-								Acceso directo
+								Inventario
 							</div>
 						</div>
 					</a>
@@ -37,7 +37,19 @@
 					<a href="#" class="no-underline">
 						<div class="card card-acceso">
 							<div class="card-body p-0 m-0 img-acceso">
-								<img src="../../img/accesoDefault.png">
+								<img src="../../img/icon/lista-de-verificacion.png">
+							</div>
+							<div class="card-footer">
+								Lista de verificación
+							</div>
+						</div>
+					</a>	
+				</div>
+				<div class="col-md-4 pb-4">
+					<a href="#" class="no-underline">
+						<div class="card card-acceso">
+							<div class="card-body p-0 m-0 img-acceso">
+								<img src="../../img/icon/rejilla-de-tierra-con-simbolo-de-engranaje-de-medias-partes.png">
 							</div>
 							<div class="card-footer">
 								Acceso directo
@@ -49,37 +61,13 @@
 					<a href="#" class="no-underline">
 						<div class="card card-acceso">
 							<div class="card-body p-0 m-0 img-acceso">
-								<img src="../../img/accesoDefault.png">
-							</div>
-							<div class="card-footer">
-								Acceso directo
-							</div>
-						</div>
-					</a>	
-				</div>
-				<div class="col-md-4 pb-4">
-					<a href="#" class="no-underline">
-						<div class="card card-acceso">
-							<div class="card-body p-0 m-0 img-acceso">
-								<img src="../../img/accesoDefault.png">
+								<img src="../../img/icon/reporte.png">
 							</div>
 							<div class="card-footer">
 								Acceso directo
 							</div>
 						</div>	
 					</a>
-				</div>
-				<div class="col-md-4 pb-4">
-					<a href="#" class="no-underline">
-						<div class="card card-acceso">
-							<div class="card-body p-0 m-0 img-acceso">
-								<img src="../../img/accesoDefault.png">
-							</div>
-							<div class="card-footer">
-								Acceso directo
-							</div>
-						</div>
-					</a>	
 				</div>
 			</div>
 		</div>
