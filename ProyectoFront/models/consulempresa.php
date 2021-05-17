@@ -68,12 +68,12 @@ class modeloconsultar{
     }
   }
  //Guardar empresa
-/*class modeloguardar{
+class modeloguardar{
        function guardar($nombre,$telefono,$email,$ubicacion){
        $lon = new call();
        $cnx = $lon->callbd();
        mysqli_query($cnx," INSERT INTO `datosempresa`(`nombre_e`, `telefono_e`, `correo`, `ubicacion`, `estatus`) VALUES ('$nombre','$telefono','$email','$ubicacion','1')");
-   echo "Los datos se han guardado con exito"   
+   echo "Los datos se han guardado con exito"; 
   }
-}*/
+}
 ?>
