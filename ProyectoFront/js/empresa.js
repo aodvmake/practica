@@ -6,21 +6,21 @@ $(document).ready(function(){
 		var ubicacion = $("#ubicacion").val()
 
       if (nombre!='' && telefono!='' && email!='' && ubicacion!='') {
-			var parametros =Object.freeze({
+			var parametros = Object.freeze({
 				'nombre':nombre,
 				'telefono':telefono,
 				'email':email,
 				'ubicacion':ubicacion,
-				'request':'data',
+				'request':'save',
 			});
 
 			$.ajax({
 				data: parametros,
 				url:'../../controllers/controllerempresa.php',
 				type:'POST',
-				beforeSend: function () {
+				beforeSend:function () {
 		        },
-				success:  function (response) {
+				success:function (response) {
 			
 					$("#nombre").val("")
 					$("#telefono").val("")
@@ -33,7 +33,7 @@ $(document).ready(function(){
 	  else{
 	  	alert('LLene todo los datos');
 	  }	
-	  });
+	});
 	//
 	$("#guardar-e").click(function(){	
 	    var editar =$("#guardar-e").val()
@@ -46,7 +46,7 @@ $(document).ready(function(){
      if (nombre!='' && telefono!='' && email!='' && ubicacion!='' && editar!='') {
 		
 			$("#guardar-e").val(editar);
-			var parametros =Object.freeze({
+			var parametros = Object.freeze({
 				'nombre':nombre,
 				'telefono':telefono,
 				'email':email,
