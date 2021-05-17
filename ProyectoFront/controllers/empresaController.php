@@ -2,8 +2,35 @@
 // Busqueda automatica //
 //error_reporting(0);
 include("../models/consulempresa.php");
+class empresaController{
+ function agregar(){
+  $nombre= $_POST['nombre'];
+  $telefono= $_POST['telefono'];
+  $email= $_POST['email'];
+  $ubicacion= $_POST['ubicacion'];
+  
+  $objetos=new modeloguardar();
+  echo $objetos->guardar($nombre,$telefono,$email,$ubicacion);
 
-if(isset($_POST['re'])){
+ }
+ function consultar(){
+   $objetos=new modeloconsultar();
+   echo $objetos->consultar($re);
+ }
+}
+
+$obj = new empresaController();
+$request = $_REQUEST['request'];
+
+ if ($request=='re'){
+    echo $obj->consultar();
+ }
+ else if($request == 'data'){
+   echo $obj->agregar();
+}
+
+/*
+//if(isset($_POST['re'])){
  class datos{
   function save(){
    $re=$_POST['re'];
@@ -70,3 +97,4 @@ if ($request=='save') {
   echo $obj->edit();
 }
 //No cierres la llave de php por seguridad :)
+*/?>

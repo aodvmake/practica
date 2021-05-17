@@ -1,7 +1,11 @@
 <?php 
+	include('../../controllers/sesionadm.php');
+	mb_internal_encoding("iso-8859-1");
+    mb_http_output( "UTF-8" );
+    ob_start("mb_output_handler");
 	include('../bases/baseH.php');
 ?>
-
+<meta charset="utf-8">
 <section class="container pt-5 pb-3">
 	<div class="row">
 		<div class="col-lg-8">

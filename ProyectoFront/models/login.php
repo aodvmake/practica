@@ -6,14 +6,15 @@ class modeloguardar{
        $cclonn = new call();
        $rrcnx = $cclonn->callbd();
      //Selecciona las tablas necesarias 
-      $conp=mysqli_query($rrcnx,"SELECT US.IDusuario,US.email,US.pass,puesto.nombre FROM usuario AS US INNER JOIN puesto 
-      ON US.IDpuesto=puesto.IDpuesto WHERE US.email='$email' AND US.pass='$pass' ");
-      $rows="";
+      $conp=mysqli_query($rrcnx,"SELECT us.IDusuario,us.email,us.IDpuesto,dg.nombre as trabajador ,p.IDpuesto,p.nombre FROM datosgenerales AS dg INNER JOIN usuario AS us ON dg.IDusuario=us.IDusuario INNER JOIN puesto AS p ON us.IDpuesto=p.IDpuesto 
+        WHERE us.email='$email' AND us.pass='$pass' ");
+        $rows="";
 
       if ($row=mysqli_fetch_array($conp)){
           $rows=$row['nombre'];
           $_SESSION["email"]=$row['email'];
           $_SESSION['tipo']=$row['nombre'];
+          $_SESSION['trabajador']=$row['trabajador'];
           }
 
          switch ($rows) {

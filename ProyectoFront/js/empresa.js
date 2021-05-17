@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 			$.ajax({
 				data: parametros,
-				url:'../../controllers/controllerempresa.php',
+				url:'../../controllers/empresaController.php',
 				type:'POST',
 				beforeSend:function () {
 		        },
@@ -84,7 +84,7 @@ $(document).ready(function(){
 	$(obtener_registro());
   	function obtener_registro(re) {
   		$.ajax({
-  			url:'../../controllers/controllerempresa.php',
+  			url:'../../controllers/empresaController.php',
   			type:'POST',
   			dataType:'html',
   			data:{re:re},

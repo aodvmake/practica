@@ -12,7 +12,7 @@
 
 			$.ajax({
 				data: parametros,
-				url:'controllers/login.php',
+				url:'controllers/loginController.php',
 				type:'POST',
 				beforeSend: function () {
 		        },
