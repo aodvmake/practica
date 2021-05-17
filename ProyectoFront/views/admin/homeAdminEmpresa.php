@@ -165,7 +165,4 @@
 <?php 
   include('../bases/baseF.php');
 ?>
-<script type="text/javascript" src="../../js/buscarempresa.js"></script>
-<script type="text/javascript" src="../../js/guardarempresa.js"></script>
-<script type="text/javascript" src="../../js/editarempresa.js"></script>
-<script type="text/javascript" src="../../js/editarempresamodal.js"></script>
+<script type="text/javascript" src="../../js/empresa.js"></script>
