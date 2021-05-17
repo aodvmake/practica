@@ -3,30 +3,30 @@
 //error_reporting(0);
 include("../models/consulempresa.php");
 class empresaController{
- function agregar(){
-  $nombre= $_POST['nombre'];
-  $telefono= $_POST['telefono'];
-  $email= $_POST['email'];
-  $ubicacion= $_POST['ubicacion'];
+  function agregar(){
+    $nombre= $_POST['nombre'];
+    $telefono= $_POST['telefono'];
+    $email= $_POST['email'];
+    $ubicacion= $_POST['ubicacion'];
   
-  $objetos=new modeloguardar();
-  echo $objetos->guardar($nombre,$telefono,$email,$ubicacion);
+    $objetos=new modeloguardar();
+    echo $objetos->guardar($nombre,$telefono,$email,$ubicacion);
+  }
 
- }
- function consultar(){
-   $objetos=new modeloconsultar();
-   echo $objetos->consultar($re);
- }
+  function consultar(){
+    $objetos=new modeloconsultar();
+    echo $objetos->consultar($re);
+  }
 }
 
-$obj = new empresaController();
-$request = $_REQUEST['request'];
+$request = isset($_POST['request']) ? $_POST['request'] : false;
 
- if ($request=='re'){
-    echo $obj->consultar();
- }
- else if($request == 'data'){
-   echo $obj->agregar();
+if ($request=='re'){
+  $obj = new empresaController();
+  echo $obj->consultar();
+}else if($request == 'data'){
+  $obj = new empresaController();
+  echo $obj->agregar();
 }
 
 /*
@@ -97,4 +97,4 @@ if ($request=='save') {
   echo $obj->edit();
 }
 //No cierres la llave de php por seguridad :)
-*/?>
+*/
