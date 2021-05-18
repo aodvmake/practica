@@ -53,46 +53,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="search" name="" placeholder="Buscar bajas temporales" class="form-control">
+        <input type="search" name="" placeholder="Buscar bajas temporales" class="form-control" id="buscabaja">
         <br>
-
-        <div class="table-responsive">
-        	<table class="table table-striped">
-        		<thead>
-        			<tr>
-        				<th></th>
-        				<th></th>
-        			</tr>
-        		</thead>
-        		<tbody>
-        			<tr>
-        				<td>Nombre de la empresa</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la empresa</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la empresa</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la empresa</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la empresa</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la empresa</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        		</tbody>
-        	</table>
+        
+        <div class="table-responsive" id="bajasresultado">
         </div>
-
 
 
       </div>
@@ -114,7 +79,7 @@
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="telefono" class="form-label">Telefono</label>
-	    	<input type="number" class="form-control" id="telefono">
+	    	<input type="number" class="form-control" id="telefono" maxlength="10">
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="email" class="form-label">Correo de la empresa</label>
