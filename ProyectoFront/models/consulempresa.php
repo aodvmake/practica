@@ -107,7 +107,7 @@ class modeloconsultabaja{
                      $mostrarbajas.='
             <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-success"  id="altaempresa" onclick="squarebaja('.$row['IDempresa'].')" value="'.$row['IDempresa'].'" >Activar</button></td>
+            <td><button class="btn btn-success" onclick="altaempresaPrint('.$row['IDempresa'].')">Activar</button></td>
           </tr>';
             }
           }
@@ -126,8 +126,8 @@ class modeloconsultabaja{
          $mostrarbajas.='
           <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-success"  id="altaempresa" onclick="squarebaja('.$row['IDempresa'].')" value="'.$row['IDempresa'].'" >Activar</button></td>
-          </tr>'; 
+            <td><button class="btn btn-success altaempresa" data-id="'.$row['IDempresa'].'" >Activar</button></td>
+          </tr>';
         }
        }
        else{
