@@ -46,7 +46,8 @@
   </div>
 </div>
 
-<div class="modal fade" id="bajasTemporales" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<form method="POST" action="../../controllers/empresaController.php" >
+ <div class="modal fade" id="bajasTemporales" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -63,7 +64,8 @@
       </div>
     </div>
   </div>
-</div>
+ </div>
+</form>
 
 <div class="modal fade" id="addEmpresa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -98,7 +100,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="editEmpresa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editEmpresa" tabindex="-1" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -106,22 +108,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
-	    	<label for="nombre" class="form-label">Nombre de la empresa</label>
-	    	<input type="text" class="form-control" id="e-nombre">
-	  	</div>
-	  	<div class="mb-3">
-	    	<label for="telefono" class="form-label">Telefono</label>
-	    	<input type="number" class="form-control" id="e-telefono">
-	  	</div>
-	  	<div class="mb-3">
-	    	<label for="email" class="form-label">Correo de la empresa</label>
-	    	<input type="email" class="form-control" id="e-email">
-	  	</div>
-	  	<div class="mb-3">
-	    	<label for="ubicacion" class="form-label">Ubicación</label>
-	    	<input type="text" class="form-control" id="e-ubicacion">
-	  	</div>
+      <div id=editempresadiv></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="guardar-e" value="">Guardar</button>
@@ -135,24 +122,3 @@
   include('../bases/baseF.php');
 ?>
 <script type="text/javascript" src="../../js/empresa.js"></script>
-
-<script type="text/javascript">
-  function altaempresaPrint(alta){
-    var parametros = Object.freeze({
-      'alta':alta,
-      'request':'alta',
-    });
-    $.ajax({
-      data: parametros,
-      url:'../../controllers/empresaController.php',
-      type:'POST',
-      beforeSend:function () {
-          },
-      success:function (response) {
-        alert(response);
-        $("#bajasTemporales").modal('hide');
-        document.location.reload();
-      }
-    });
-  }
-</script>

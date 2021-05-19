@@ -25,7 +25,7 @@ class modeloconsultar{
                      $mostrar.='
             <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa"  id="editar" onclick="square('.$row['IDempresa'].')" value="'.$row['IDempresa'].'" >Editar</button></td>
+            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa"  id="btneditar" onclick="square('.$row['IDempresa'].')" value="'.$row['IDempresa'].'" >Editar</button></td>
             <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa"
              onclick="square('.$row['IDempresa'].')" value="'.$row['IDempresa'].'">Dar de baja</button></td>
           </tr>';
@@ -46,7 +46,7 @@ class modeloconsultar{
          $mostrar.='
           <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa"  id="editar" onclick="square('.$row['IDempresa'].')"  value="'.$row['IDempresa'].'" >Editar</button></td>
+            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa"  id="btneditar" onclick="square('.$row['IDempresa'].')"  value="'.$row['IDempresa'].'" >Editar</button></td>
             <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa"
              onclick="square('.$row['IDempresa'].')" value="'.$row['IDempresa'].'">Dar de baja</button></td>
           </tr>'; 
@@ -105,9 +105,9 @@ class modeloconsultabaja{
         if(mysqli_num_rows($conp)!=0){
           while ($row=mysqli_fetch_array($conp)){
                      $mostrarbajas.='
-          <tr>
+            <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-success altaempresa" data-id="'.$row['IDempresa'].'" >Activar</button></td>
+            <td><button class="btn btn-success" value="'.$row['IDempresa'].'" type="submit" name="alta" id="alta">Activar</button></td>
           </tr>';
             }
           }
@@ -126,7 +126,7 @@ class modeloconsultabaja{
          $mostrarbajas.='
           <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-success altaempresa" data-id="'.$row['IDempresa'].'" >Activar</button></td>
+            <td><button class="btn btn-success altaempresa" value="'.$row['IDempresa'].'" type="submit" name="alta" id="alta" >Activar</button></td>
           </tr>';
         }
        }
@@ -149,15 +149,52 @@ class modeloaltaempresa{
   function altaempresa($altaempresa){
       $lon = new call();
       $cnx = $lon->callbd();
-      mysqli_query($cnx,"UPDATE datosempresa SET estatus= b'1' WHERE datosempresa.IDempresa ='$altaempresa' ");
-      echo "Los datos se han guardado con éxito"; 
+      mysqli_query($cnx,"UPDATE datosempresa SET estatus= b'1' WHERE datosempresa.IDempresa ='$altaempresa' "); 
+      echo'<script type="text/javascript">
+      alert("Los datos se han guardado con éxito");
+      window.location.href="../views/admin/homeAdminEmpresa.php ";
+      </script>';
   }
 }
+//editar datos empresa
 class modeloeditar{
   function editar($editar,$nombre,$telefono,$email,$ubicacion){
     $lon = new call();
     $cnx = $lon->callbd(); 
     mysqli_query($cnx,"UPDATE `datosempresa` SET `nombre_e`='$nombre',`telefono_e`='$telefono',`correo`='$correo',`ubicacion`='$ubicacion' WHERE IDempresa='$editar' ");
-    
   }
 }
+//consultar antes de editar 
+class modeloconsultareditar{
+  function consuleditar($consuleditar){
+    $lon = new call();
+    $cnx = $lon->callbd(); 
+    $queryconsult=mysqli_query($cnx,"SELECT `IDempresa`, `nombre_e`, `telefono_e`, `correo`, `ubicacion` FROM `datosempresa` WHERE IDempresa='$consuleditar' ");
+    if($consuleditar==''){
+        $consuleditar='vacio';
+    }
+    $row=mysqli_fetch_array($queryconsult);
+    
+    $ce=' 
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre de la empresa</label>
+        <input type="text" class="form-control" id="e-nombre" value="'.$row['nombre_e'].'">
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Telefono</label>
+        <input type="number" class="form-control" id="e-telefono" value="'.$row['telefono_e'].'">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo de la empresa</label>
+        <input type="email" class="form-control" id="e-email" value="'.$row['correo'].'">
+      </div>
+      <div class="mb-3">
+        <label for="ubicacion" class="form-label">Ubicación</label>
+        <input type="text" class="form-control" id="e-ubicacion" value="'.$row['ubicacion'].'">
+      </div>
+  ';
+    echo $ce.$consuleditar;
+  }
+}
+
+?>

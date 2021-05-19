@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#guardar").click(function(){	
+    $("#guardar").click(function(){	
 	    var nombre = $("#nombre").val()
 		var telefono = $("#telefono").val()
 		var email = $("#email").val()
@@ -36,8 +36,7 @@ $(document).ready(function(){
 	  	alert('LLene todo los datos');
 	    }	
 	  });
-	
-	//
+//
 	$("#guardar-e").click(function(){
 	    var editar =$("#guardar-e").val()
 	    var nombre = $("#e-nombre").val()
@@ -79,31 +78,7 @@ $(document).ready(function(){
 	  }
    	
 	  });
-
 //
-	$(".altaempresa").click(function(){
-	    var alta = $(this).data('id');
-			var parametros = Object.freeze({
-				'alta':alta,
-				'request':'alta',
-			});
- 
-			$.ajax({
-				data: parametros,
-				url:'../../controllers/empresaController.php',
-				type:'POST',
-				beforeSend:function () {
-		        },
-				success:function (response) {
-					alert(response);
-					$("#bajasTemporales").modal('hide');
-					document.location.reload();
-				}
-			});
-		});
-
-//
-
     $("#baja").click(function(){
 	    var baja = $("#baja").val()
 
@@ -125,9 +100,28 @@ $(document).ready(function(){
 				}
 			});
 	    });
-
 //
+    $("#btneditar").click(function(){
+	   var btneditar = $("#btneditar").val();
+	   		    
+	   		var parametros = Object.freeze({
+		     'btneditar':btneditar,
+		     'request':'btneditar',
+			});
 
+			$.ajax({
+				data: parametros,
+				url:'../../controllers/empresaController.php',
+				type:'POST',
+				beforeSend:function () {
+		        },
+				success:function (responseedit) {
+					$('#editEmpresa').modal('show');
+                    $("#editempresadiv").html(responseedit);
+				}
+			});
+	    });
+//
 });
 
 
@@ -182,7 +176,3 @@ function square(id) {
   $('#guardar-e').val(id);
   $('#baja').val(id);
 }
-function squarebaja(id) {
-  $('#altaempresa').val(id);
-}
-

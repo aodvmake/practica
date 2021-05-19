@@ -41,9 +41,18 @@ class empresaController{
     $objetos= new modeloeditar();
     echo $objetos->editar($editar,$nombre,$telefono,$email,$ubicacion);
   }
+  function consuleditar(){
+    $consuleditar=$_POST['btneditar'];
+    $objetos = new modeloconsultareditar();
+    echo $objetos->consuleditar($consuleditar);
+  }
 }
 
+
 $request = isset($_POST['request']) ? $_POST['request'] : false;
+if (isset($_POST['alta'])){
+$request="alta"; 
+}
 
 if ($request=='consulta'){
   $obj = new empresaController();
@@ -67,4 +76,8 @@ else if ($request=='alta'){
 else if($request=='editarempresa'){
   $obj=new empresaController();
   echo $obj->editarempresa();
+}
+else if($request=='btneditar'){
+  $obj=new empresaController();
+  echo $obj->consuleditar();
 }
