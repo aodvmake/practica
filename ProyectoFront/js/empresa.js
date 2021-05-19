@@ -81,9 +81,8 @@ $(document).ready(function(){
 	  });
 
 //
-	$("#altaempresa").click(function(){
-	    var alta = $("#altaempresa").val()
-
+	$(".altaempresa").click(function(){
+	    var alta = $(this).data('id');
 			var parametros = Object.freeze({
 				'alta':alta,
 				'request':'alta',

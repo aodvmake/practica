@@ -135,3 +135,24 @@
   include('../bases/baseF.php');
 ?>
 <script type="text/javascript" src="../../js/empresa.js"></script>
+
+<script type="text/javascript">
+  function altaempresaPrint(alta){
+    var parametros = Object.freeze({
+      'alta':alta,
+      'request':'alta',
+    });
+    $.ajax({
+      data: parametros,
+      url:'../../controllers/empresaController.php',
+      type:'POST',
+      beforeSend:function () {
+          },
+      success:function (response) {
+        alert(response);
+        $("#bajasTemporales").modal('hide');
+        document.location.reload();
+      }
+    });
+  }
+</script>
