@@ -105,9 +105,9 @@ class modeloconsultabaja{
         if(mysqli_num_rows($conp)!=0){
           while ($row=mysqli_fetch_array($conp)){
                      $mostrarbajas.='
-            <tr>
+          <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-success" onclick="altaempresaPrint('.$row['IDempresa'].')">Activar</button></td>
+            <td><button class="btn btn-success altaempresa" data-id="'.$row['IDempresa'].'" >Activar</button></td>
           </tr>';
             }
           }
@@ -158,6 +158,6 @@ class modeloeditar{
     $lon = new call();
     $cnx = $lon->callbd(); 
     mysqli_query($cnx,"UPDATE `datosempresa` SET `nombre_e`='$nombre',`telefono_e`='$telefono',`correo`='$correo',`ubicacion`='$ubicacion' WHERE IDempresa='$editar' ");
-    echo
+    
   }
 }
