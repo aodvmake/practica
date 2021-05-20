@@ -18,13 +18,22 @@
 			<button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#bajasTemporales">Baja temporal</button>
 		</div>
 	</div>
-
 <!--empresa-->
-	<div class="table-responsive" id="resultados">
+	<div class="table-responsive" >
+       <table class="table table-striped">
+          <thead>
+           <tr>
+            <th>Nombre de la empresa</th>
+            <th></th>
+            <th></th>
+           </tr>
+         </thead>
+         <tbody id="resultados">
 
+
+         </tbody>
+        </table>
   </div>
-
-
 </section>
 
 <!--Modals-->
@@ -57,10 +66,16 @@
         <input type="search" name="" placeholder="Buscar bajas temporales" class="form-control" id="buscabaja">
         <br>
         
-        <div class="table-responsive" id="bajasresultado">
-        </div>
-
-
+        <table class="table table-striped">
+        <thead>
+          <tr>
+           <th>Nombre de la empresa </th>
+           <th></th>
+          </tr>
+        </thead>
+         <tbody id="bajasresultado">
+         </tbody>
+        </table>
       </div>
     </div>
   </div>

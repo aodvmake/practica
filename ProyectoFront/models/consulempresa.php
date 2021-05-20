@@ -6,26 +6,16 @@ class modeloconsultar{
        function consultar($re){
        $cclonn = new call();
        $rrcnx = $cclonn->callbd();
-       $mostrar='
-       <table class="table table-striped">
-          <thead>
-           <tr>
-            <th>Nombre de la empresa</th>
-            <th></th>
-            <th></th>
-           </tr>
-         </thead>
-         <tbody>';
-
+       $mostrar='';
        if ($re!="") {
        $conp=mysqli_query($rrcnx,"SELECT* FROM datosempresa WHERE nombre_e LIKE '%".$re."%' AND estatus='1'");
         
         if(mysqli_num_rows($conp)!=0){
           while ($row=mysqli_fetch_array($conp)){
                      $mostrar.='
-            <tr>
+          <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa"  id="btneditar" onclick="square('.$row['IDempresa'].')" value="'.$row['IDempresa'].'" >Editar</button></td>
+            <td><button class="btn btn-primary btneditar" data-bs-toggle="modal" data-bs-target="#editEmpresa" data-id="'.$row['IDempresa'].'" >Editar</button></td>
             <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa"
              onclick="square('.$row['IDempresa'].')" value="'.$row['IDempresa'].'">Dar de baja</button></td>
           </tr>';
@@ -60,9 +50,6 @@ class modeloconsultar{
             ";
         }
        }
-      $mostrar.='
-         </tbody>
-        </table>';
       echo $mostrar;
     }
   }
@@ -90,15 +77,7 @@ class modeloconsultabaja{
   function consultbaja($consultbaja){
     $lon = new call();
     $cnx = $lon->callbd(); 
-     $mostrarbajas='
-      <table class="table table-striped">
-        <thead>
-          <tr>
-           <th>Nombre de la empresa </th>
-           <th></th>
-          </tr>
-        </thead>
-       <tbody>';
+     $mostrarbajas='';
       if ($consultbaja!="") {
        $conp=mysqli_query($cnx,"SELECT* FROM datosempresa WHERE nombre_e LIKE '%".$consultbaja."%' AND estatus='0'");
         
@@ -138,9 +117,6 @@ class modeloconsultabaja{
             ";
         }
        }
-      $mostrarbajas.='
-         </tbody>
-        </table>';
       echo $mostrarbajas;
   }
 }
