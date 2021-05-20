@@ -29,8 +29,6 @@
            </tr>
          </thead>
          <tbody id="resultados">
-
-
          </tbody>
         </table>
   </div>

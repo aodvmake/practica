@@ -101,7 +101,7 @@ $(document).ready(function(){
 			});
 	    });
 //
-    $(".btneditar").click(function(){
+    $(document).on("click",".btneditar",function(){
 	   var btneditar = $(this).data('id');
 	   		    
 	   		var parametros = Object.freeze({
