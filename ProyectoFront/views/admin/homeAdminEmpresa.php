@@ -108,7 +108,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div id=editempresadiv></div>
+        <input type="hidden" name="id_empresa" id="id_Empresa">
+       <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre de la empresa</label>
+        <input type="text" class="form-control" id="nombre_edit">
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Telefono</label>
+        <input type="number" class="form-control" id="telefono_edit" maxlength="10">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo de la empresa</label>
+        <input type="email" class="form-control" id="email_edit">
+      </div>
+      <div class="mb-3">
+        <label for="ubicacion" class="form-label">Ubicación</label>
+        <input type="text" class="form-control" id="ubicacion_edit">
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="guardar-e" value="">Guardar</button>

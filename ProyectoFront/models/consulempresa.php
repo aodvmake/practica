@@ -46,7 +46,7 @@ class modeloconsultar{
          $mostrar.='
           <tr>
             <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmpresa"  id="btneditar" onclick="square('.$row['IDempresa'].')"  value="'.$row['IDempresa'].'" >Editar</button></td>
+            <td><button class="btn btn-primary btneditar" data-bs-toggle="modal" data-bs-target="#editEmpresa" data-id="'.$row['IDempresa'].'" >Editar</button></td>
             <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEmpresa"
              onclick="square('.$row['IDempresa'].')" value="'.$row['IDempresa'].'">Dar de baja</button></td>
           </tr>'; 
@@ -170,30 +170,20 @@ class modeloconsultareditar{
     $lon = new call();
     $cnx = $lon->callbd(); 
     $queryconsult=mysqli_query($cnx,"SELECT `IDempresa`, `nombre_e`, `telefono_e`, `correo`, `ubicacion` FROM `datosempresa` WHERE IDempresa='$consuleditar' ");
-    if($consuleditar==''){
-        $consuleditar='vacio';
+
+    $dataArray = null;
+    if (mysqli_num_rows($queryconsult)>0) {
+      while($row=mysqli_fetch_array($queryconsult)){
+        $dataArray = array(
+          "id"=>$row['IDempresa'],
+          "nombre"=>$row['nombre_e'],
+          "telefono"=>$row['telefono_e'],
+          "correo"=>$row['correo'],
+          "ubicacion"=>$row['ubicacion']
+        );
+      }
     }
-    $row=mysqli_fetch_array($queryconsult);
-    
-    $ce=' 
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre de la empresa</label>
-        <input type="text" class="form-control" id="e-nombre" value="'.$row['nombre_e'].'">
-      </div>
-      <div class="mb-3">
-        <label for="telefono" class="form-label">Telefono</label>
-        <input type="number" class="form-control" id="e-telefono" value="'.$row['telefono_e'].'">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo de la empresa</label>
-        <input type="email" class="form-control" id="e-email" value="'.$row['correo'].'">
-      </div>
-      <div class="mb-3">
-        <label for="ubicacion" class="form-label">Ubicación</label>
-        <input type="text" class="form-control" id="e-ubicacion" value="'.$row['ubicacion'].'">
-      </div>
-  ';
-    echo $ce.$consuleditar;
+    echo json_encode($dataArray);
   }
 }
 

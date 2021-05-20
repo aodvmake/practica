@@ -101,8 +101,8 @@ $(document).ready(function(){
 			});
 	    });
 //
-    $("#btneditar").click(function(){
-	   var btneditar = $("#btneditar").val();
+    $(".btneditar").click(function(){
+	   var btneditar = $(this).data('id');
 	   		    
 	   		var parametros = Object.freeze({
 		     'btneditar':btneditar,
@@ -115,9 +115,16 @@ $(document).ready(function(){
 				type:'POST',
 				beforeSend:function () {
 		        },
-				success:function (responseedit) {
-					$('#editEmpresa').modal('show');
-                    $("#editempresadiv").html(responseedit);
+				success:function (response) {
+					if (response != null){
+						var data = JSON.parse(response)
+						
+						$("#id_Empresa").val(data.id);
+						$("#nombre_edit").val(data.nombre);
+						$("#telefono_edit").val(data.telefono);
+						$("#email_edit").val(data.correo);
+						$("#ubicacion_edit").val(data.ubicacion);
+					}
 				}
 			});
 	    });
