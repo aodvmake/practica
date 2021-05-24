@@ -1,15 +1,12 @@
 <?php
-include("../models/empresaModelo.php");
+include("../models/piezaModelo.php");
 
-class empresaController{
+class piezaController{
   function agregar(){
     $nombre= $_POST['nombre'];
-    $telefono= $_POST['telefono'];
-    $email= $_POST['email'];
-    $ubicacion= $_POST['ubicacion'];
-  
+    $precio= $_POST['precio'];
     $objetos=new modeloguardar();
-    echo $objetos->guardar($nombre,$telefono,$email,$ubicacion);
+    echo $objetos->guardar($nombre,$precio);
   }
 
   function consultar(){
@@ -55,29 +52,29 @@ $request="alta";
 }
 
 if ($request=='consulta'){
-  $obj = new empresaController();
+  $obj = new piezaController();
   echo $obj->consultar();
 }else if($request == 'save'){
-  $obj = new empresaController();
+  $obj = new piezaController();
   echo $obj->agregar();
 }
 else if($request=='baja') {
-  $obj = new empresaController();
+  $obj = new piezaController();
   echo $obj->baja(); 
 }
 else if($request=='consultabaja'){
-  $obj=new empresaController();
+  $obj=new piezaController();
   echo $obj->consultarbaja();
 }
 else if ($request=='alta'){
-  $obj=new empresaController();
+  $obj=new piezaController();
   echo $obj->altaempresa();
 }
 else if($request=='editarempresa'){
-  $obj=new empresaController();
+  $obj=new piezaController();
   echo $obj->editarempresa();
 }
 else if($request=='btneditar'){
-  $obj=new empresaController();
+  $obj=new piezaController();
   echo $obj->consuleditar();
 }

@@ -90,7 +90,7 @@
       <div class="modal-body">
         <div class="mb-3">
 	    	<label for="nombre" class="form-label">Nombre de la empresa</label>
-	    	<input type="text" class="form-control" id="nombre">
+	    	<input type="text" class="form-control" id="nombre" maxlength="50">
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="telefono" class="form-label">Telefono</label>
@@ -98,11 +98,11 @@
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="email" class="form-label">Correo de la empresa</label>
-	    	<input type="email" class="form-control" id="email">
+	    	<input type="email" class="form-control" id="email" maxlength="50">
 	  	</div>
 	  	<div class="mb-3">
 	    	<label for="ubicacion" class="form-label">Ubicación</label>
-	    	<input type="text" class="form-control" id="ubicacion">
+	    	<input type="text" class="form-control" id="ubicacion" maxlength="256">
 	  	</div>
       </div>
       <div class="modal-footer">
@@ -121,7 +121,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="hidden" name="id_empresa" id="id_Empresa">
+        <input type="hidden" name="id_empresa" id="id_Empresa" maxlength="50">
        <div class="mb-3">
         <label for="nombre" class="form-label">Nombre de la empresa</label>
         <input type="text" class="form-control" id="nombre_edit">
@@ -132,11 +132,11 @@
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Correo de la empresa</label>
-        <input type="email" class="form-control" id="email_edit">
+        <input type="email" class="form-control" id="email_edit" maxlength="50">
       </div>
       <div class="mb-3">
         <label for="ubicacion" class="form-label">Ubicación</label>
-        <input type="text" class="form-control" id="ubicacion_edit">
+        <input type="text" class="form-control" id="ubicacion_edit" maxlength="256">
       </div>
       </div>
       <div class="modal-footer">

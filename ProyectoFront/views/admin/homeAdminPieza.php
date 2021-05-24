@@ -1,11 +1,15 @@
 <?php 
+  include('../../controllers/sesionadm.php');
+    mb_internal_encoding("iso-8859-1");
+    mb_http_output( "UTF-8" );
+    ob_start("mb_output_handler");
   include('../bases/baseH.php');
 ?>
 
 <section class="container pt-5 pb-5">
 	<div class="row">
 		<div class="col-lg-6">
-			<input type="search" name="" placeholder="Buscar pieza" class="form-control">
+			<input type="search" name="" placeholder="Buscar pieza" id="busqueda" class="form-control">
 		</div>
 		<div class="col-lg-3">
 			<button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#addPieza">Agregar una pieza</button>
@@ -18,43 +22,13 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th></th>
-					<th></th>
+					<th>Nombre de la Pieza</th>
+					<th>Precio</th>
 					<th></th>
           <th></th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>Nombre de la pieza</td>
-          <td>Precio</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPieza">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePieza">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la pieza</td>
-          <td>Precio</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPieza">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePieza">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la pieza</td>
-          <td>Precio</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPieza">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePieza">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la pieza</td>
-          <td>Precio</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPieza">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePieza">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la pieza</td>
-          <td>Precio</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPieza">Editar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePieza">Dar de baja</button></td>
-				</tr>
+			<tbody id="resultados">
 			</tbody>
 		</table>
 	</div>
@@ -139,15 +113,15 @@
       <div class="modal-body">
         <div class="mb-3">
   	    	<label for="nombre" class="form-label">Nombre de la pieza</label>
-  	    	<input type="text" class="form-control" id="nombre">
+  	    	<input type="text" class="form-control" id="nombre_add">
   	  	</div>
   	  	<div class="mb-3">
   	    	<label for="precio" class="form-label">Precio</label>
-  	    	<input type="number" class="form-control" id="precio">
+  	    	<input type="number" class="form-control" id="precio_add">
   	  	</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="guardar">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -162,13 +136,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+         <input type="hidden" name="id_empresa" id="id_pieza" maxlength="50">
         <div class="mb-3">
   	    	<label for="nombre" class="form-label">Nombre de la pieza</label>
-  	    	<input type="text" class="form-control" id="nombre">
+  	    	<input type="text" class="form-control" id="nombre_edit">
   	  	</div>
   	  	<div class="mb-3">
   	    	<label for="precio" class="form-label">Precio</label>
-  	    	<input type="number" class="form-control" id="precio">
+  	    	<input type="text" class="form-control" id="precio_edit">
   	  	</div>
       </div>
       <div class="modal-footer">
@@ -182,3 +157,4 @@
 <?php 
   include('../bases/baseF.php');
 ?>
+<script type="text/javascript" src="../../js/pieza.js"></script>

@@ -33,7 +33,7 @@
 
       <ul class="navbar-nav mr-auto mb-lg-0">
       	<li class="nav-item pt-2-responsive">
-          <a class="nav-link font-main" aria-current="page" href="#"><?php echo $_SESSION['trabajador']; ?></a>
+          <a class="nav-link font-main" aria-current="page" href="homeAdmin.php"><?php echo $_SESSION['trabajador']; ?></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

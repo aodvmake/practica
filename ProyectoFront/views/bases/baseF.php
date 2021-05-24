@@ -1,8 +1,11 @@
 <footer>
+	<meta charset="utf-8">
 	<div class="card">
 		<div class="card-footer black">
 			<p class="font-main text-uppercase text-center text-white pt-3">
-				© 2021 Copyright DINMVAZ
+				
+
+				<?php echo "©2021 Copyright DINMVAZ"?>
 			</p>
 		</div>
 	</div>

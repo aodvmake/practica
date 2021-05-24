@@ -1,31 +1,24 @@
 $(document).ready(function(){
     $("#guardar").click(function(){	
-	    var nombre = $("#nombre").val()
-		var telefono = $("#telefono").val()
-		var email = $("#email").val()
-		var ubicacion = $("#ubicacion").val()
+	    var nombre = $("#nombre_add").val()
+		var precio = $("#precio_add").val()
 
-      if (nombre!='' && telefono!='' && email!='' && ubicacion!='') {
+      if (nombre!='' && precio!='') {
 			var parametros = Object.freeze({
 				'nombre':nombre,
-				'telefono':telefono,
-				'email':email,
-				'ubicacion':ubicacion,
+				'precio':precio,
 				'request':'save',
 			});
-
 			$.ajax({
 				data: parametros,
-				url:'../../controllers/empresaController.php',
+				url:'../../controllers/piezaController.php',
 				type:'POST',
 				beforeSend:function () {
 		        },
 				success:function (response) {
 			
-					$("#nombre").val("")
-					$("#telefono").val("")
-					$("#email").val("")
-					$("#ubicacion").val("")
+					$("#nombre_add").val("")
+					$("#precio_add").val("")
 					alert(response);
 					$("#addEmpresa").modal('hide');
 					document.location.reload();
@@ -107,7 +100,7 @@ $(document).ready(function(){
 
 			$.ajax({
 				data: parametros,
-				url:'../../controllers/empresaController.php',
+				url:'../../controllers/piezaController.php',
 				type:'POST',
 				beforeSend:function () {
 		        },
@@ -115,11 +108,9 @@ $(document).ready(function(){
 					if (response != null){
 						var data = JSON.parse(response)
 						
-						$("#id_Empresa").val(data.id);
+						$("#id_pieza").val(data.id);
 						$("#nombre_edit").val(data.nombre);
-						$("#telefono_edit").val(data.telefono);
-						$("#email_edit").val(data.correo);
-						$("#ubicacion_edit").val(data.ubicacion);
+						$("#precio_edit").val(data.precio);
 					}
 				}
 			});
@@ -131,7 +122,7 @@ $(document).ready(function(){
 	$(obtener_registro(''));
   	function obtener_registro(consulta) {
   		$.ajax({
-  			url:'../../controllers/empresaController.php',
+  			url:'../../controllers/piezaController.php',
   			type:'POST',
   			dataType:'html',
   			data:{'consulta':consulta,'request':'consulta'},
@@ -154,7 +145,7 @@ $(document).ready(function(){
 	$(obtener_registrobajas(''));
   	function obtener_registrobajas(consultabaja) {
   		$.ajax({
-  			url:'../../controllers/empresaController.php',
+  			url:'../../controllers/piezaController.php',
   			type:'POST',
   			dataType:'html',
   			data:{'consultabaja':consultabaja,'request':'consultabaja'},

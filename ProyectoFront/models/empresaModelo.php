@@ -137,7 +137,8 @@ class modeloeditar{
   function editar($editar,$nombre,$telefono,$email,$ubicacion){
     $lon = new call();
     $cnx = $lon->callbd(); 
-    mysqli_query($cnx,"UPDATE `datosempresa` SET `nombre_e`='$nombre',`telefono_e`='$telefono',`correo`='$correo',`ubicacion`='$ubicacion' WHERE IDempresa='$editar' ");
+    mysqli_query($cnx,"UPDATE `datosempresa` SET `nombre_e`='$nombre',`telefono_e`='$telefono',`correo`='$email',`ubicacion`='$ubicacion' WHERE IDempresa='$editar' ");
+    echo "Los datos se han guardado con éxito"; 
   }
 }
 //consultar antes de editar 
