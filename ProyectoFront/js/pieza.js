@@ -31,33 +31,29 @@ $(document).ready(function(){
 	  });
 //
 	$("#guardar-e").click(function(){
-	    var editar =$("#id_Empresa").val()
+		var editar = $("#id_pieza").val()
 	    var nombre = $("#nombre_edit").val()
-		var telefono = $("#telefono_edit").val()
-		var email = $("#email_edit").val()
-		var ubicacion = $("#ubicacion_edit").val()
+		var precio = $("#precio_edit").val()
       
-      if (nombre!='' && telefono!='' && email!='' && ubicacion!='' && editar!='') {
+      if (nombre!='' && precio!='' && editar!='') {
 		
 			var parametros = Object.freeze({
 				'nombre':nombre,
-				'telefono':telefono,
-				'email':email,
-				'ubicacion':ubicacion,
+				'precio':precio,
 				'editar':editar,
-				'request':'editarempresa',
+				'request':'editarpieza',
 			});
 
 			$.ajax({
 				data: parametros,
-				url:'../../controllers/empresaController.php',
+				url:'../../controllers/piezaController.php',
 				type:'POST',
-				beforeSend: function () {
+				beforeSend: function(){
 		        },
 				success:  function (response) {
 			
 					alert(response);
-					$("#editEmpresa").modal('hide');
+					$("#editPieza").modal('hide');
 					document.location.reload();
 				}
 			});
@@ -78,7 +74,7 @@ $(document).ready(function(){
 
 			$.ajax({
 				data: parametros,
-				url:'../../controllers/empresaController.php',
+				url:'../../controllers/piezaController.php',
 				type:'POST',
 				beforeSend:function () {
 		        },
@@ -115,6 +111,28 @@ $(document).ready(function(){
 				}
 			});
 	    });
+//
+    $(document).on("click",".alta",function(){
+	   var alta = $(this).data('id');
+	   		    
+	   		var parametros = Object.freeze({
+		     'alta':alta,
+		     'request':'alta',
+			});
+        
+			$.ajax({
+				data: parametros,
+				url:'../../controllers/piezaController.php',
+				type:'POST',
+				beforeSend:function () {
+		        },
+				success:function (response) {
+					alert(response);
+					$("#bajasTemporales").modal('hide');
+					document.location.reload();
+				}
+			});
+	    });    
 //
 });
 

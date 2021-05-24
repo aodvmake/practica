@@ -70,7 +70,7 @@ class modelobaja{
   function baja($baja){
     $lon = new call();
     $cnx = $lon->callbd();
-    mysqli_query($cnx,"UPDATE datosempresa SET estatus= b'0' WHERE datosempresa.IDempresa ='$baja' ");
+    mysqli_query($cnx,"UPDATE `piezas` SET estatus= b'0' WHERE IDpieza ='$baja' ");
     echo "Los datos se han guardado con éxito"; 
   }
 }
@@ -82,14 +82,14 @@ class modeloconsultabaja{
     $cnx = $lon->callbd(); 
      $mostrarbajas='';
       if ($consultbaja!="") {
-       $conp=mysqli_query($cnx,"SELECT* FROM datosempresa WHERE nombre_e LIKE '%".$consultbaja."%' AND estatus='0'");
+       $conp=mysqli_query($cnx,"SELECT* FROM `piezas` WHERE nombre LIKE '%".$consultbaja."%' AND estatus='0'");
         
         if(mysqli_num_rows($conp)!=0){
           while ($row=mysqli_fetch_array($conp)){
                      $mostrarbajas.='
             <tr>
-            <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-success" value="'.$row['IDempresa'].'" type="submit" name="alta" id="alta">Activar</button></td>
+            <td>'.$row['nombre'].'</td>
+            <td><button class="btn btn-success alta" data-id="'.$row['IDpieza'].'" type="submit" name="alta" id="alta">Activar</button></td>
           </tr>';
             }
           }
@@ -101,14 +101,14 @@ class modeloconsultabaja{
             ";
           }
        }else if ($consultbaja==""){
-       $conp=mysqli_query($cnx,"SELECT* FROM datosempresa WHERE estatus='0' ");
+       $conp=mysqli_query($cnx,"SELECT* FROM `piezas` WHERE estatus='0' ");
       if(mysqli_num_rows($conp)!=0){ 
         while ($row=mysqli_fetch_array($conp)) {
         $mostrarbajas.=''; 
          $mostrarbajas.='
           <tr>
-            <td>'.$row['nombre_e'].'</td>
-            <td><button class="btn btn-success altaempresa" value="'.$row['IDempresa'].'" type="submit" name="alta" id="alta" >Activar</button></td>
+            <td>'.$row['nombre'].'</td>
+            <td><button class="btn btn-success alta" data-id="'.$row['IDpieza'].'" type="submit" name="alta" id="alta" >Activar</button></td>
           </tr>';
         }
        }
@@ -123,24 +123,21 @@ class modeloconsultabaja{
       echo $mostrarbajas;
   }
 }
-// alta de empresa
-class modeloaltaempresa{
-  function altaempresa($altaempresa){
+// alta de pieza
+class modeloaltapieza{
+  function altapieza($altapieza){
       $lon = new call();
       $cnx = $lon->callbd();
-      mysqli_query($cnx,"UPDATE datosempresa SET estatus= b'1' WHERE datosempresa.IDempresa ='$altaempresa' "); 
-      echo'<script type="text/javascript">
-      alert("Los datos se han guardado con éxito");
-      window.location.href="../views/admin/homeAdminEmpresa.php ";
-      </script>';
+      mysqli_query($cnx,"UPDATE piezas SET estatus= b'1' WHERE IDpieza ='$altapieza' "); 
+      echo'Los datos se han guardado con éxito';
   }
 }
-//editar datos empresa
+//editar datos  de pieza
 class modeloeditar{
-  function editar($editar,$nombre,$telefono,$email,$ubicacion){
+  function editar($editar,$nombre,$precio){
     $lon = new call();
     $cnx = $lon->callbd(); 
-    mysqli_query($cnx,"UPDATE `datosempresa` SET `nombre_e`='$nombre',`telefono_e`='$telefono',`correo`='$email',`ubicacion`='$ubicacion' WHERE IDempresa='$editar' ");
+    mysqli_query($cnx,"UPDATE `piezas` SET `nombre`='$nombre',`precio`='$precio' WHERE IDpieza='$editar' ");
     echo "Los datos se han guardado con éxito"; 
   }
 }

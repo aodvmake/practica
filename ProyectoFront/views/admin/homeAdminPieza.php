@@ -1,8 +1,5 @@
 <?php 
   include('../../controllers/sesionadm.php');
-    mb_internal_encoding("iso-8859-1");
-    mb_http_output( "UTF-8" );
-    ob_start("mb_output_handler");
   include('../bases/baseH.php');
 ?>
 
@@ -46,7 +43,7 @@
         <h3 class="text-center">¿Seguro que desea dar de baja temporal la pieza?</h3>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Aceptar</button>
+        <button type="button" class="btn btn-primary" id="baja">Aceptar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -60,7 +57,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="search" name="" placeholder="Buscar bajas temporales" class="form-control">
+        <input type="search" name="" placeholder="Buscar bajas temporales" class="form-control" id="buscabaja" >
         <br>
         <div class="table-responsive">
         	<table class="table table-striped">
@@ -70,31 +67,8 @@
         				<th></th>
         			</tr>
         		</thead>
-        		<tbody>
-        			<tr>
-        				<td>Nombre de la pieza</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la pieza</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la pieza</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la pieza</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la pieza</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la pieza</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
+        		<tbody id="bajasresultado">
+        			
         		</tbody>
         	</table>
         </div>
@@ -136,7 +110,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-         <input type="hidden" name="id_empresa" id="id_pieza" maxlength="50">
+         <input type="hidden" name="id_pieza" id="id_pieza" maxlength="50">
         <div class="mb-3">
   	    	<label for="nombre" class="form-label">Nombre de la pieza</label>
   	    	<input type="text" class="form-control" id="nombre_edit">
@@ -147,7 +121,7 @@
   	  	</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="guardar-e">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>

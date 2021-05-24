@@ -1,8 +1,5 @@
 <?php 
 	include('../../controllers/sesionadm.php');
-	mb_internal_encoding("iso-8859-1");
-    mb_http_output( "UTF-8" );
-    ob_start("mb_output_handler");
 	include('../bases/baseH.php');
 ?>
 <meta charset="utf-8">
@@ -62,7 +59,7 @@
 					</a>	
 				</div>
 				<div class="col-md-4 pb-4">
-					<a href="#" class="no-underline">
+					<a href="homeAdminSolicitudCompraCrear.php" class="no-underline">
 						<div class="card card-acceso">
 							<div class="card-body p-0 m-0 img-acceso">
 								<img src="../../img/icon/reporte.png">

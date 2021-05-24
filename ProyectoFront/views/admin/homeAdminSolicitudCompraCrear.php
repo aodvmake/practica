@@ -1,8 +1,10 @@
 <?php 
+  include('../../controllers/sesionadm.php');
   include('../bases/baseH.php');
 ?>
 
 <section class="container">
+  <br>
   <p class="h4">Crea solicitud de compra</p>
 </section>
 
@@ -12,13 +14,8 @@
       <div class="row">
         <div class="col-md-4">
           <p class="h4">Nombre de la empresa</p>
-          <select class="form-select" aria-label="Default select example">
-            <option selected disabled>Seleccionar empresa</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select class="form-select" aria-label="Default select example" id="resultadoempresa">
           </select>
-          <input type="text" class="form-control" placeholder="Nombre de la empresa">    
         </div>
         <div class="col-md-8">
           <button class="btn btn-primary f-right mt-2">Finalizar</button>
@@ -45,13 +42,8 @@
               <tbody>
                 <tr>
                   <td>
-                    <select class="form-select" aria-label="Default select example">
-                      <option selected disabled>Seleccionar pieza</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                    <input type="text" class="form-control" placeholder="Pieza">  
+                    <select class="form-select" aria-label="Default select example" id="consultarpieza">
+                    </select> 
                   </td>
                   <td><input type="number" min="0" name="" class="form-control"></td>
                   <td><input type="number" min="0" name="" class="form-control"></td>
@@ -107,3 +99,4 @@
 <?php 
   include('../bases/baseF.php');
 ?>
+<script type="text/javascript" src="../../js/solicitud.js"></script>

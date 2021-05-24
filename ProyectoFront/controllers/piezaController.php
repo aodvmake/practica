@@ -24,19 +24,17 @@ class piezaController{
     $objetos=new modeloconsultabaja();
     echo $objetos->consultbaja($consultbaja);
   }
-  function altaempresa(){
-    $altaempresa=$_POST['alta'];
-    $objetos = new modeloaltaempresa();
-    echo $objetos->altaempresa($altaempresa);
+  function altapieza(){
+    $altapieza=$_POST['alta'];
+    $objetos = new modeloaltapieza();
+    echo $objetos->altapieza($altapieza);
   }
-  function editarempresa(){
+  function editarpieza(){
     $nombre= $_POST['nombre'];
-    $telefono= $_POST['telefono'];
-    $email= $_POST['email'];
-    $ubicacion= $_POST['ubicacion'];
-    $editar=$_POST['editar'];
+    $precio= $_POST['precio'];
+    $editar= $_POST['editar'];
     $objetos= new modeloeditar();
-    echo $objetos->editar($editar,$nombre,$telefono,$email,$ubicacion);
+    echo $objetos->editar($editar,$nombre,$precio);
   }
   function consuleditar(){
     $consuleditar=$_POST['btneditar'];
@@ -68,11 +66,11 @@ else if($request=='consultabaja'){
 }
 else if ($request=='alta'){
   $obj=new piezaController();
-  echo $obj->altaempresa();
+  echo $obj->altapieza();
 }
-else if($request=='editarempresa'){
+else if($request=='editarpieza'){
   $obj=new piezaController();
-  echo $obj->editarempresa();
+  echo $obj->editarpieza();
 }
 else if($request=='btneditar'){
   $obj=new piezaController();
