@@ -21,7 +21,7 @@ class modelconsultar{
        $cnx = $lon->callbd();
        $mostrar='';
        $conp=mysqli_query($cnx,"SELECT* FROM piezas WHERE estatus='1' ORDER BY nombre ASC ");
-       $mostrar.='<option selected disabled >Seleccionar empresa</option>';
+       $mostrar.='<option selected disabled >Seleccionar pieza</option>';
         while ($row=mysqli_fetch_array($conp)) { 
          $mostrar.='<option value="'.$row['IDpieza'].'">'.$row['nombre'].'</option>';
         }

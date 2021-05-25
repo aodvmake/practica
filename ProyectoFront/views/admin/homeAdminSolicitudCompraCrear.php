@@ -42,7 +42,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <select class="form-select" aria-label="Default select example" id="consultarpieza">
+                    <select class="form-select selectprecio" aria-label="Default select example" id="consultarpieza">
                     </select> 
                   </td>
                   <td><input type="number" min="0" name="" class="form-control"></td>

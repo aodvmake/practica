@@ -12,7 +12,8 @@ var consulta = "1";
 	success:function (response) {
 	$("#resultadoempresa").html(response);
 	}
-});  	
+});
+//  	
 var conp = "1";
  var parametros =({
 				'conp':conp,
@@ -27,4 +28,11 @@ var conp = "1";
 	success:function (conp) {
 	$("#consultarpieza").html(conp);
 	}
-});  	
+});
+//
+
+ $(document).on("change",".selectprecio",function(){
+   var precio = $("#consultarpieza").val()
+   
+   alert(precio);
+   });
