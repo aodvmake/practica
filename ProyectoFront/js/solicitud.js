@@ -32,7 +32,7 @@ var conp = "1";
 //
 
  $(document).on("change",".selectprecio",function(){
+   var pieza = $("option:selected",this).data('id');
    var precio = $("#consultarpieza").val()
-   
-   alert(precio);
+   $("#precio").val(precio);
    });

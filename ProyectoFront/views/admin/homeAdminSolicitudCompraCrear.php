@@ -45,7 +45,7 @@
                     <select class="form-select selectprecio" aria-label="Default select example" id="consultarpieza">
                     </select> 
                   </td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
+                  <td><input type="number" min="0" name="" id="precio" class="form-control" readonly></td>
                   <td><input type="number" min="0" name="" class="form-control"></td>
                   <td><input type="text" name="" class="form-control"></td>
                   <td><input type="number" min="0" name="" class="form-control"></td>
