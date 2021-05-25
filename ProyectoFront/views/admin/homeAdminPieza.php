@@ -91,7 +91,7 @@
   	  	</div>
   	  	<div class="mb-3">
   	    	<label for="precio" class="form-label">Precio</label>
-  	    	<input type="number" class="form-control" id="precio_add">
+  	    	<input type="number" min="0" class="form-control" id="precio_add" pattern="^\d*(\.\d{0,2})?$">
   	  	</div>
       </div>
       <div class="modal-footer">
@@ -117,7 +117,7 @@
   	  	</div>
   	  	<div class="mb-3">
   	    	<label for="precio" class="form-label">Precio</label>
-  	    	<input type="text" class="form-control" id="precio_edit">
+  	    	<input type="number" min="0" class="form-control" id="precio_edit" pattern="^\d*(\.\d{0,2})?$">
   	  	</div>
       </div>
       <div class="modal-footer">
