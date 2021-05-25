@@ -15,7 +15,7 @@ var consulta = "1";
 });
 //  	
 var conp = "1";
- var parametros =({
+var parametros =({
 				'conp':conp,
 				'request':'conp',
 		});
@@ -30,7 +30,6 @@ var conp = "1";
 	}
 });
 //
-
  $(document).on("change",".selectprecio",function(){
    var pieza = $("option:selected",this).data('id');
    var precio = $("#consultarpieza").val()

@@ -5,6 +5,7 @@
 
 <section class="container">
   <br>
+
   <p class="h4">Crea solicitud de compra</p>
 </section>
 
@@ -34,7 +35,7 @@
                   <th>Precio</th>
                   <th>Cantidad</th>
                   <th>Código</th>
-                  <th>Numero de la empresa</th>
+                  <th>Numero de compra</th>
                   <th>Fecha compromiso</th>
                   <th>Avisar antes de</th>
                 </tr>

@@ -1,4 +1,5 @@
 <?php 
+  include('../../controllers/sesionadm.php');
   include('../bases/baseH.php');
 ?>
 

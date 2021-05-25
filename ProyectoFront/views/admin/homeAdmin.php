@@ -23,7 +23,7 @@
 					</a>	
 				</div>
 				<div class="col-md-4 pb-4">
-					<a href="#" class="no-underline">
+					<a href="homeAdminInventario.php" class="no-underline">
 						<div class="card card-acceso">
 							<div class="card-body p-0 m-0 img-acceso">
 								<img src="../../img/icon/inventario.png">
@@ -35,13 +35,13 @@
 					</a>
 				</div>
 				<div class="col-md-4 pb-4">
-					<a href="#" class="no-underline">
+					<a href="homeAdminReporteEstadoActual.php" class="no-underline">
 						<div class="card card-acceso">
 							<div class="card-body p-0 m-0 img-acceso">
 								<img src="../../img/icon/lista-de-verificacion.png">
 							</div>
 							<div class="card-footer">
-								Lista de verificación
+								Estado actual
 							</div>
 						</div>
 					</a>	
@@ -65,7 +65,7 @@
 								<img src="../../img/icon/reporte.png">
 							</div>
 							<div class="card-footer">
-								Acceso directo
+								Crear Solicitud
 							</div>
 						</div>	
 					</a>
