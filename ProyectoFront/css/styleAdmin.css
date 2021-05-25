@@ -16,6 +16,9 @@ html::-webkit-scrollbar-thumb{
 body{
 	scroll-behavior: smooth;
 }
+.float-right{
+	float: right;
+}
 .font-main{
 	font-family: 'Montserrat', sans-serif!important;
 }

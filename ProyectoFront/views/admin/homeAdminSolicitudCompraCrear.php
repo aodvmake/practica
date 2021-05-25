@@ -60,6 +60,8 @@
       </div>
 
       Detalles
+
+      <button class="btn btn-primary float-right">Agregar</button>
       <hr>
 
       <div class="row">
