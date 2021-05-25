@@ -56,12 +56,11 @@
               </tbody>
             </table>
           </div>
+          <button class="btn btn-primary float-right">Agregar</button>
         </div>
       </div>
-
+      <br>
       Detalles
-
-      <button class="btn btn-primary float-right">Agregar</button>
       <hr>
 
       <div class="row">
