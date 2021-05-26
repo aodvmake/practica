@@ -14,6 +14,7 @@ class modeloguardar{
           $rows=$row['nombre'];
           $_SESSION["email"]=$row['email'];
           $_SESSION['tipo']=$row['nombre'];
+          $_SESSION['usuario']=$row['IDusuario'];
           $_SESSION['trabajador']=$row['trabajador'];
           }
 

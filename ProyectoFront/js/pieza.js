@@ -20,7 +20,7 @@ $(document).ready(function(){
 					$("#nombre_add").val("")
 					$("#precio_add").val("")
 					alert(response);
-					$("#addEmpresa").modal('hide');
+					$("#addPieza").modal('hide');
 					document.location.reload();
 				}
 			 });

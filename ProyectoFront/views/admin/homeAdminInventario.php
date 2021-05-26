@@ -211,27 +211,27 @@
       <div class="modal-body">
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre del modelo</label>
-          <input type="text" class="form-control" id="nombre">
+          <input type="text" class="form-control" id="nombre_h">
         </div>
         <div class="mb-3">
           <label for="serial" class="form-label">Serial</label>
-          <input type="text" class="form-control" id="serial">
+          <input type="text" class="form-control" id="serial_h">
         </div>
         <div class="mb-3">
           <label for="marca" class="form-label">Marca</label>
-          <input type="text" class="form-control" id="marca">
-        </div>
+          <input type="text" class="form-control" id="marca_h">
+        </div>s
         <div class="mb-3">
           <label for="cantidad" class="form-label">Cantidad</label>
-          <input type="number" min="0" class="form-control" id="cantidad">
+          <input type="number" min="0" class="form-control" id="cantidad_h">
         </div>
         <div class="mb-3">
           <label for="descripcion" class="form-label">Descripción</label>
-          <textarea class="form-control" id="descripcion"></textarea>
+          <textarea class="form-control" id="descripcion_h"></textarea>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="guardar">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -303,3 +303,4 @@
 <?php 
   include('../bases/baseF.php');
 ?>
+<script type="text/javascript" src="../../js/inventario.js"></script>
