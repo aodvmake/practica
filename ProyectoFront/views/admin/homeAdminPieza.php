@@ -110,7 +110,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-         <input type="hidden" name="id_pieza" id="id_pieza" maxlength="50">
+         <input type="hidden" name="id_pieza" id="id_pieza">
         <div class="mb-3">
   	    	<label for="nombre" class="form-label">Nombre de la pieza</label>
   	    	<input type="text" class="form-control" id="nombre_edit">

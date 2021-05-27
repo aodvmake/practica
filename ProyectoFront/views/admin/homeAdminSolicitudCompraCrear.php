@@ -18,8 +18,10 @@
           <select class="form-select" aria-label="Default select example" id="resultadoempresa">
           </select>
         </div>
+        <input type="hidden" name="id_solicitud" id="id_solicitud">
+        <input type="hidden" name="id_pieza" id="id_pieza">
         <div class="col-md-8">
-          <button class="btn btn-primary f-right mt-2">Finalizar</button>
+          <button class="btn btn-primary f-right mt-2" id="btnfinalizar">Finalizar</button>
         </div>
       </div>
       
@@ -47,16 +49,16 @@
                     </select> 
                   </td>
                   <td><input type="number" min="0" name="" id="precio" class="form-control" readonly></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="text" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="date" name="" class="form-control"></td>
-                  <td><input type="date" name="" class="form-control"></td>
+                  <td><input type="number" min="0" name="cantidad" id="cantidad" class="form-control"></td>
+                  <td><input type="text" name="" id="codigo" class="form-control"></td>
+                  <td><input type="text" id="ncompra" name="" class="form-control"></td>
+                  <td><input type="date" name="" id="fecha_c"class="form-control"></td>
+                  <td><input type="date" name="" id="fecha_a" class="form-control"></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <button class="btn btn-primary float-right">Agregar</button>
+          <button class="btn btn-primary float-right" id="guardar">Agregar</button>
         </div>
       </div>
       <br>
@@ -78,16 +80,7 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td><input type="text" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="text" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><button class="btn btn-danger">Quitar</button></td>
-                </tr>
+              <tbody id="tabla_detalles">
               </tbody>
             </table>
           </div>
