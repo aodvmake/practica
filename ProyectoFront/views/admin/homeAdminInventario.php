@@ -6,7 +6,7 @@
 <section class="container pt-5 pb-5">
 	<div class="row">
 		<div class="col-lg-6">
-			<input type="search" name="" placeholder="Buscar herramienta" class="form-control">
+			<input type="search" name="" placeholder="Buscar herramienta" class="form-control" id="busqueda">
 		</div>
 		<div class="col-lg-2">
 			<button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#addHerramienta">Agregar una herramienta</button>
@@ -15,56 +15,24 @@
 			<button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#bajasTemporales">Baja temporal</button>
 		</div>
     <div class="col-lg-2">
-      <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#entregarHerramienta">Entregar herramienta</button>
+      <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#entregarHerramienta" id="btnentrega">Entregar herramienta</button>
     </div>
 	</div>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th></th>
-					<th></th>
-					<th></th>
+					<th>Marca</th>
+					<th>Modelo</th>
+					<th>Inventariado</th>
+          <th>Cantidad</th>
+          <th></th>
           <th></th>
           <th></th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>Nombre de la herramienta</td>
-          <td>Cantidad</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editHerramienta">Editar</button></td>
-          <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#retirarHerramienta">Retirar</button></td>
-					<td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteHerramienta">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la herramienta</td>
-          <td>Cantidad</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editHerramienta">Editar</button></td>
-          <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#retirarHerramienta">Retirar</button></td>
-          <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteHerramienta">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la herramienta</td>
-          <td>Cantidad</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editHerramienta">Editar</button></td>
-          <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#retirarHerramienta">Retirar</button></td>
-          <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteHerramienta">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la herramienta</td>
-          <td>Cantidad</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editHerramienta">Editar</button></td>
-          <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#retirarHerramienta">Retirar</button></td>
-          <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteHerramienta">Dar de baja</button></td>
-				</tr>
-				<tr>
-					<td>Nombre de la herramienta</td>
-          <td>Cantidad</td>
-					<td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editHerramienta">Editar</button></td>
-          <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#retirarHerramienta">Retirar</button></td>
-          <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteHerramienta">Dar de baja</button></td>
-				</tr>
+			<tbody id="resultados">
+
 			</tbody>
 		</table>
 	</div>
@@ -82,7 +50,7 @@
         <h3 class="text-center">¿Seguro que desea dar de baja temporal la herramienta?</h3>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Aceptar</button>
+        <button type="button" class="btn btn-primary" id="baja" >Aceptar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -96,41 +64,20 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="search" name="" placeholder="Buscar bajas temporales" class="form-control">
+        <input type="search" name="" id="buscabaja" placeholder="Buscar bajas temporales" class="form-control">
         <br>
         <div class="table-responsive">
         	<table class="table table-striped">
         		<thead>
         			<tr>
-        				<th></th>
-        				<th></th>
+        				<th>Modelo</th>
+        				<th>Marca</th>
+                <th>Cantidad</th>
+                <th></th>
         			</tr>
         		</thead>
-        		<tbody>
-        			<tr>
-        				<td>Nombre de la herramienta</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la herramienta</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la herramienta</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la herramienta</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la herramienta</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
-        			<tr>
-        				<td>Nombre de la herramienta</td>
-        				<td><button class="btn btn-success">Activar</button></td>
-        			</tr>
+        		<tbody id="bajasresultado">
+
         		</tbody>
         	</table>
         </div>
@@ -150,49 +97,15 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Cantidad retirada</th>
+                <th>Responsable</th>
+                <th>Fecha</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Nombre de la herramienta</td>
-                <td>Cantidad</td>
-                <td>Responsable</td>
-                <td><button class="btn btn-primary">Entregar</button></td>
-              </tr>
-              <tr>
-                <td>Nombre de la herramienta</td>
-                <td>Cantidad</td>
-                <td>Responsable</td>
-                <td><button class="btn btn-primary">Entregar</button></td>
-              </tr>
-              <tr>
-                <td>Nombre de la herramienta</td>
-                <td>Cantidad</td>
-                <td>Responsable</td>
-                <td><button class="btn btn-primary">Entregar</button></td>
-              </tr>
-              <tr>
-                <td>Nombre de la herramienta</td>
-                <td>Cantidad</td>
-                <td>Responsable</td>
-                <td><button class="btn btn-primary">Entregar</button></td>
-              </tr>
-              <tr>
-                <td>Nombre de la herramienta</td>
-                <td>Cantidad</td>
-                <td>Responsable</td>
-                <td><button class="btn btn-primary">Entregar</button></td>
-              </tr>
-              <tr>
-                <td>Nombre de la herramienta</td>
-                <td>Cantidad</td>
-                <td>Responsable</td>
-                <td><button class="btn btn-primary">Entregar</button></td>
-              </tr>
+            <tbody id="entregas">
+             
             </tbody>
           </table>
         </div>
@@ -220,7 +133,7 @@
         <div class="mb-3">
           <label for="marca" class="form-label">Marca</label>
           <input type="text" class="form-control" id="marca_h">
-        </div>s
+        </div>
         <div class="mb-3">
           <label for="cantidad" class="form-label">Cantidad</label>
           <input type="number" min="0" class="form-control" id="cantidad_h">
@@ -246,29 +159,30 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <input type="hidden" name="id_herramienta" id="id_herramienta">
         <div class="mb-3">
   	    	<label for="nombre" class="form-label">Nombre del modelo</label>
-  	    	<input type="text" class="form-control" id="nombre">
+  	    	<input type="text" class="form-control" id="nombre_edit">
   	  	</div>
         <div class="mb-3">
           <label for="serial" class="form-label">Serial</label>
-          <input type="text" class="form-control" id="serial">
+          <input type="text" class="form-control" id="serial_edit">
         </div>
         <div class="mb-3">
           <label for="marca" class="form-label">Marca</label>
-          <input type="text" class="form-control" id="marca">
+          <input type="text" class="form-control" id="marca_edit">
         </div>
         <div class="mb-3">
           <label for="cantidad" class="form-label">Cantidad</label>
-          <input type="number" min="0" class="form-control" id="cantidad">
+          <input type="number" min="0" class="form-control" id="cantidad_edit">
         </div>
         <div class="mb-3">
           <label for="descripcion" class="form-label">Descripción</label>
-          <textarea class="form-control" id="descripcion"></textarea>
+          <textarea class="form-control" id="descripcion_edit"></textarea>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="guardar-edit">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -285,15 +199,15 @@
       <div class="modal-body">
         <div class="mb-3">
           <label for="nombre" class="form-label">Responsable</label>
-          <input type="text" class="form-control" id="nombre">
+          <input type="text" class="form-control" id="nombre_retirar">
         </div>
         <div class="mb-3">
           <label for="cantidad" class="form-label">Cantidad</label>
-          <input type="number" min="0" class="form-control" id="cantidad">
+          <input type="number" min="0" class="form-control" id="cantidad_retirar">
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" disabled>Guardar</button>
+        <button type="button" class="btn btn-primary" id="retirar">Guardar</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
