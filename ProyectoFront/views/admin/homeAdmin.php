@@ -78,7 +78,7 @@
 			</div>
 			<div class="col-12">
 				<div class="card">
-					<div class="card-footer">
+					<div class="card-footer" id="notificaciones">
 						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 				</div>
@@ -91,3 +91,4 @@
 <?php 
 	include('../bases/baseF.php');
 ?>
+<script type="text/javascript" src="../../js/admin.js"></script>
