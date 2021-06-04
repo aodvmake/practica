@@ -1,4 +1,5 @@
 <?php 
+  include('../../controllers/sesionadm.php');
   include('../bases/baseH.php');
 ?>
 
@@ -12,16 +13,13 @@
       <div class="row">
         <div class="col-md-4">
           <p class="h4">Nombre de la empresa</p>
-          <select class="form-select" aria-label="Default select example">
-            <option selected disabled>Seleccionar empresa</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <input type="text" class="form-control" placeholder="Nombre de la empresa">    
+          <input type="text" class="form-control" placeholder="Nombre de la empresa" id="nombre_em">    
         </div>
+        <input type="hidden" name="solicitud" id="solicitud">
+        <input type="hidden" name="id_em" id="id_em">
+        <input type="hidden" name="id_pieza" id="id_pieza">
         <div class="col-md-8">
-          <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#buscarSolicitud">Buscar</button>
+          <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#buscarSolicitud" id="btnbuscar">Buscar Solicitud</button>
         </div>
       </div>
       
@@ -37,7 +35,7 @@
                   <th>Precio</th>
                   <th>Cantidad</th>
                   <th>Código</th>
-                  <th>Numero de la empresa</th>
+                  <th>Numero de compra</th>
                   <th>Fecha compromiso</th>
                   <th>Avisar antes de</th>
                 </tr>
@@ -45,24 +43,20 @@
               <tbody>
                 <tr>
                   <td>
-                    <select class="form-select" aria-label="Default select example">
-                      <option selected disabled>Seleccionar pieza</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                    <input type="text" class="form-control" placeholder="Pieza">  
+                    <select class="form-select selectprecio" aria-label="Default select example" id="consultarpieza">
+                    </select> 
                   </td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="text" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="date" name="" class="form-control"></td>
-                  <td><input type="date" name="" class="form-control"></td>
+                  <td><input type="number" min="0" name="" id="precio" class="form-control" readonly></td>
+                  <td><input type="number" min="0" name="cantidad" id="cantidad" class="form-control"></td>
+                  <td><input type="text" name="" id="codigo" class="form-control"></td>
+                  <td><input type="text" id="ncompra" name="" class="form-control"></td>
+                  <td><input type="date" name="" id="fecha_c"class="form-control"></td>
+                  <td><input type="date" name="" id="fecha_a" class="form-control"></td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <button class="btn btn-primary float-right" id="guardar">Agregar</button>
         </div>
       </div>
 
@@ -84,16 +78,7 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td><input type="text" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="text" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><input type="number" min="0" name="" class="form-control"></td>
-                  <td><button class="btn btn-danger">Quitar</button></td>
-                </tr>
+              <tbody id="datos">
               </tbody>
             </table>
           </div>
@@ -118,34 +103,11 @@
               <table class="table table-stripped">
                 <thead>
                   <tr>
-                    <th>Nombre de la pieza</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Código</th>
-                    <th>Total</th>
-                    <th>Número de compra</th>
-                    <th></th>
+                    <th>Nombre de la empresa</th>
+                    <th>Fecha de creación de la solicitud</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="text" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><input type="text" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><button class="btn btn-primary">Seleccionar</button></td>
-                  </tr>
-                  <tr>
-                    <td><input type="text" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><input type="text" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><input type="number" min="0" name="" class="form-control"></td>
-                    <td><button class="btn btn-primary">Seleccionar</button></td>
-                  </tr>
+                <tbody id="resultado">
                 </tbody>
               </table>
             </div>
@@ -159,3 +121,4 @@
 <?php 
   include('../bases/baseF.php');
 ?>
+<script type="text/javascript" src="../../js/editarsolicitud.js"></script>
