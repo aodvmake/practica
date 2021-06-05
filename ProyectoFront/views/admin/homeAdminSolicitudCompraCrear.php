@@ -8,20 +8,20 @@
 
   <p class="h4">Crea solicitud de compra</p>
 </section>
-
+<input type="hidden" name="id_solicitud" id="id_solicitud">
+<input type="hidden" name="id_pieza" id="id_pieza">
 <section>
   <div class="card">
     <div class="card-header p-4">
       <div class="row">
         <div class="col-md-4">
           <p class="h4">Nombre de la empresa</p>
-          <select class="form-select" aria-label="Default select example" id="resultadoempresa">
-          </select>
-        </div>
-        <input type="hidden" name="id_solicitud" id="id_solicitud">
-        <input type="hidden" name="id_pieza" id="id_pieza">
-        <div class="col-md-8">
-          <button class="btn btn-primary f-right mt-2" id="btnfinalizar">Finalizar</button>
+          <div class="input-group mb-3">
+            <select class="form-select mt-2" aria-label="Default select example" id="resultadoempresa"></select>
+            <div class="input-group-append">
+              <button class="btn btn-primary f-right mt-2" id="btnfinalizar">Finalizar</button>
+            </div>
+          </div>
         </div>
       </div>
       

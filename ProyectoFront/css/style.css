@@ -23,6 +23,9 @@ html::-webkit-scrollbar-thumb{
 body{
 	scroll-behavior: smooth;
 }
+.w-100{
+	width: 100%!important;
+}
 .greenCard{
 	background-color:var(--color-green)!important;
 }

@@ -7,19 +7,28 @@
   <p class="h4">Editar solicitud de compra</p>
 </section>
 
+<input type="hidden" name="solicitud" id="solicitud">
+<input type="hidden" name="id_em" id="id_em">
+<input type="hidden" name="id_pieza" id="id_pieza">
 <section>
   <div class="card">
     <div class="card-header p-4">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
           <p class="h4">Nombre de la empresa</p>
-          <input type="text" class="form-control" placeholder="Nombre de la empresa" id="nombre_em">    
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Nombre de la empresa" id="nombre_em">
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#buscarSolicitud" id="btnbuscar">Buscar Solicitud</button>
+            </div>
+          </div>
         </div>
-        <input type="hidden" name="solicitud" id="solicitud">
-        <input type="hidden" name="id_em" id="id_em">
-        <input type="hidden" name="id_pieza" id="id_pieza">
-        <div class="col-md-8">
-          <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#buscarSolicitud" id="btnbuscar">Buscar Solicitud</button>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+          <button class="btn btn-danger w-100">Eliminar</button>
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-primary w-100">Finalizar</button>
         </div>
       </div>
       
