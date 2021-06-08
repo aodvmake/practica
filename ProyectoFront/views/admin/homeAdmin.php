@@ -78,42 +78,7 @@
 			</div>
 			<div class="col-12">
 				<div class="card">
-					<div class="card-footer cardFooterScroll">
-						<div class="card">
-							<div class="card-body greenCard">
-								<p class="m-0 p-0 text-white">Empresa</p>
-								<p class="m-0 p-0 text-white">Pieza: Ejemplo</p>
-								<p class="m-0 p-0 text-white">Fecha compromiso:02/06/2021</p>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-body greenCard">
-								<p class="m-0 p-0 text-white">Empresa</p>
-								<p class="m-0 p-0 text-white">Pieza: Ejemplo</p>
-								<p class="m-0 p-0 text-white">Fecha compromiso:02/06/2021</p>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-body yellowCard">
-								<p class="m-0 p-0 text-white">Empresa</p>
-								<p class="m-0 p-0 text-white">Pieza: Ejemplo</p>
-								<p class="m-0 p-0 text-white">Fecha compromiso:02/06/2021</p>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-body yellowCard">
-								<p class="m-0 p-0 text-white">Empresa</p>
-								<p class="m-0 p-0 text-white">Pieza: Ejemplo</p>
-								<p class="m-0 p-0 text-white">Fecha compromiso:02/06/2021</p>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-body redCard">
-								<p class="m-0 p-0 text-white">Empresa</p>
-								<p class="m-0 p-0 text-white">Pieza: Ejemplo</p>
-								<p class="m-0 p-0 text-white">Fecha compromiso:02/06/2021</p>
-							</div>
-						</div>
+					<div class="card-footer cardFooterScroll" id="notificaciones">
 					</div>
 				</div>
 			</div>

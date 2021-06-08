@@ -25,10 +25,10 @@
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-3">
-          <button class="btn btn-danger w-100">Eliminar</button>
+          <button class="btn btn-danger w-100" id="btn-eliminar">Eliminar</button>
         </div>
         <div class="col-md-3">
-          <button class="btn btn-primary w-100">Finalizar</button>
+          <button class="btn btn-primary w-100" id="btn-finalizar">Finalizar</button>
         </div>
       </div>
       

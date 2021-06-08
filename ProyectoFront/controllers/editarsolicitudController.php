@@ -42,7 +42,17 @@ class editarsolicitudController{
     $valor1=$_POST['conp'];
     $objetos=new modeloconsultarpieza();
     echo $objetos->consulpie($valor1);
- }    
+ }
+ function elimiarsol(){
+ 	$solicitud=$_POST['solicitud'];
+ 	$objetos= new modeloelimiarsol();
+ 	echo $objetos->elimiarsolicitud($solicitud);
+ } 
+ function finalizar(){
+ 	$solicitud=$_POST['solicitud'];
+ 	$objetos= new modelofinalizar();
+ 	echo $objetos->finalizar($solicitud);
+ }   
 }
 
 $request = isset($_POST['request']) ? $_POST['request'] : false;
@@ -64,4 +74,12 @@ else if ($request=='save') {
 else if ($request=='conp') {
   $obj = new editarsolicitudController();
   echo $obj->consultarpieza();
+}
+else if ($request=='elimarsol'){
+  $obj= new editarsolicitudController();
+  echo $obj->elimiarsol();
+}
+else if ($request=='finalizar'){
+  $obj= new editarsolicitudController();
+  echo $obj->finalizar();
 }

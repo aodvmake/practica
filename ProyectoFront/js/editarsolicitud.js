@@ -136,6 +136,56 @@ $(document).ready(function(){
 	   }	
 	  });
    //
+   $("#btn-eliminar").click(function(){	
+      var solicitud = $("#solicitud").val()
+
+        if(solicitud!=''){
+			var parametros = Object.freeze({
+				'solicitud':solicitud,
+				'request':'elimarsol',
+			});
+			$.ajax({
+				data: parametros,
+				url:'../../controllers/editarsolicitudController.php',
+				type:'POST',
+				beforeSend:function () {
+		        },
+				success:function (response) {
+			    alert(response);
+			    document.location.reload();
+				}
+			 });
+            }
+            else{
+            	alert("Busca primero un formato");
+            }
+	      });
+   //
+   $("#btn-finalizar").click(function(){	
+      var solicitud = $("#solicitud").val()
+
+        if(solicitud!=''){
+			var parametros = Object.freeze({
+				'solicitud':solicitud,
+				'request':'finalizar',
+			});
+			$.ajax({
+				data: parametros,
+				url:'../../controllers/editarsolicitudController.php',
+				type:'POST',
+				beforeSend:function () {
+		        },
+				success:function (response) {
+			    alert(response);
+			    document.location.reload();
+				}
+			 });
+            }
+            else{
+            	alert("Busca primero un formato");
+            }
+	      });
+   //
   });
 
 var conp = "1";

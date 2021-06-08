@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/styleAdmin.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg black">
+<nav class="navbar navbar-expand-lg " style="background:#16161C;">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>

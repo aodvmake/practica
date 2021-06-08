@@ -165,8 +165,27 @@ class modeloseguircreacion{
        echo $mostrar;
   }
  } 
-
-
-//Finaliza 
-
+//Finaliza la solicitud
+class modelofinalizar{
+   function	finalizar($solicitud){
+   	   $lon = new call();
+       $cnx = $lon->callbd();
+       mysqli_query($cnx,"UPDATE solicitud SET estatus=b'1' WHERE IDsolicitud='$solicitud'");
+       echo "Los datos han sido guardados";
+   } 
+}
 //Elimina por completo todas las solicitudes en concreto  	
+ class modeloelimiarsol{
+ 	function elimiarsolicitud($solicitud){
+ 	   $lon = new call();
+       $cnx = $lon->callbd();
+       $conp=mysqli_query($cnx,"SELECT IDsolicitud,IDsp FROM solicitudpiezas WHERE IDsolicitud='$solicitud' ");
+       while ($row=mysqli_fetch_array($conp)) { 
+       $IDsp=$row['IDsp'];
+       mysqli_query($cnx,"DELETE FROM proceso WHERE IDsp='$IDsp'");
+       }
+       mysqli_query($cnx,"DELETE FROM solicitudpiezas WHERE IDsolicitud='$solicitud'");
+       mysqli_query($cnx,"DELETE FROM solicitud WHERE IDsolicitud='$solicitud'");
+       echo "Los datos han sido guardados";
+ 	}
+ }
