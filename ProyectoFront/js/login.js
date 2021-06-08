@@ -25,14 +25,12 @@
 						//window.location.href="views/cliente.php"
 					break;
 					case 'Administrador':
-						//window.location.href="views/admin.php"
+						window.location.href="views/asistente/homeAsistente.php"
 					break;
 					case 'King':
 						window.location.href="views/admin/homeAdmin.php"
-						//alert('entro');
 					break;
                     case 'Vacio':
-						//window.location.href="views/adminki.php"
 						alert('Usuario o contraseña incorrecta');
 					break;
 				}
