@@ -7,7 +7,13 @@ class modeloconsultar{
        $cnx = $lon->callbd();
        $mostrar='';
        $fecha_actual = date("Y-m-d");
-       $cons=mysqli_query($cnx,"SELECT datosempresa.nombre_e,piezas.nombre, solde.IDsp,sol.IDsolicitud,datosempresa.IDempresa,solde.fecha_c,solde.fecha_a FROM solicitud as sol INNER JOIN solicitudpiezas as solde ON sol.IDsolicitud= solde.IDsolicitud INNER JOIN datosempresa ON sol.IDempresa=datosempresa.IDempresa INNER JOIN piezas ON solde.IDpieza=piezas.IDpieza WHERE sol.estatus='1' ORDER BY fecha_c");
+       $cons=mysqli_query($cnx,"SELECT datosempresa.nombre_e,piezas.nombre, solde.IDsp,sol.IDsolicitud,datosempresa.IDempresa,solde.fecha_c,solde.fecha_a 
+           FROM solicitud as sol INNER JOIN solicitudpiezas as solde 
+           ON sol.IDsolicitud= solde.IDsolicitud INNER JOIN proceso
+           ON solde.IDsp=proceso.IDsp INNER JOIN datosempresa 
+           ON sol.IDempresa=datosempresa.IDempresa INNER JOIN piezas 
+           ON solde.IDpieza=piezas.IDpieza 
+           WHERE sol.estatus='1' AND proceso.estatus='0' ORDER BY fecha_c");
         if(mysqli_num_rows($cons)!=0){
           while ($row=mysqli_fetch_array($cons)){
            if($fecha_actual<$row['fecha_a'] && $fecha_actual<$row['fecha_c']) {

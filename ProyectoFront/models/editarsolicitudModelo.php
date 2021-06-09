@@ -118,7 +118,7 @@ class modeloseguircreacion{
    $mostrar='';
    mysqli_query($cnx,"INSERT INTO `solicitudpiezas`(`IDsolicitud`, `IDpieza`, `cantidad`, `precio`, `total`, `codigo`, `nocompra`, `fecha_c`, `fecha_a`, `estatus`) VALUES ('$solicitud','$pieza','$cantidad','$precio','$total','$codigo','$ncompra','$fecha_c','$fecha_a',b'0')");
    $proceso=mysqli_insert_id($cnx);
-   mysqli_query($cnx,"INSERT INTO `proceso`(`IDsp`, `cantidad`, `estatus`) VALUES ('$proceso','$cantidad',b'0')"); 
+   mysqli_query($cnx,"INSERT INTO `proceso`(`IDsp`, `cantidad`, `estatus`) VALUES ('$proceso','0',b'0')"); 
    $cons=mysqli_query($cnx,"SELECT datosempresa.nombre_e,piezas.nombre,solde.cantidad,
     solde.precio,solde.total,solde.codigo,solde.nocompra,solde.IDsp,sol.IDsolicitud,datosempresa.IDempresa
     FROM solicitud as sol INNER JOIN solicitudpiezas as solde

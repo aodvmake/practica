@@ -2,7 +2,7 @@
   include('../../controllers/sesionadm.php');
   include('../bases/baseH.php');
 ?>
-
+<body >
 <section class="container pt-5 pb-5">
 	<div class="row">
 		<div class="col-lg-6">
@@ -16,14 +16,16 @@
 					<th>Nombre de la Pieza</th>
 					<th>Cantidad</th>
 					<th>Avance</th>
+					<th></th>
           <th></th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="resultado">
         <tr>
           <td>Nombre de la pieza</td>
           <td>Cantidad</td>
-          <td>Avance</td>
+          <td><progress value="56" max="100"></td>
+          <td><input type="number" class="form-control" id="cantidad_add"></td>
           <td><button class="btn btn-primary">Actualizar</button></td>
         </tr>
 			</tbody>
@@ -31,7 +33,9 @@
 	</div>
 </section>
 
+
+
 <?php 
   include('../bases/baseF.php');
 ?>
-<script type="text/javascript" src="../../js/pieza.js"></script>
+<script type="text/javascript" src="../../js/reportepieza.js"></script>

@@ -41,7 +41,7 @@ class modelocreacion{
    $last=mysqli_insert_id($cnx);
     mysqli_query($cnx,"INSERT INTO `solicitudpiezas`(`IDsolicitud`, `IDpieza`, `cantidad`, `precio`, `total`, `codigo`, `nocompra`, `fecha_c`, `fecha_a`, `estatus`) VALUES ('$last','$pieza','$cantidad','$precio','$total','$codigo','$ncompra','$fecha_c','$fecha_a',b'0')");
    $proceso=mysqli_insert_id($cnx);
-   mysqli_query($cnx,"INSERT INTO `proceso`(`IDsp`, `cantidad`, `estatus`) VALUES ('$proceso','$cantidad',b'0')");  
+   mysqli_query($cnx,"INSERT INTO `proceso`(`IDsp`, `cantidad`, `estatus`) VALUES ('$proceso','0',b'0')");  
    $cons=mysqli_query($cnx,"SELECT sp.IDsp,sp.IDsolicitud,piezas.IDpieza,piezas.nombre,sp.IDpieza,sp.precio,sp.cantidad,sp.codigo,sp.total,sp.nocompra FROM solicitudpiezas as sp INNER JOIN 
      piezas ON piezas.IDpieza = SP.IDpieza WHERE sp.IDsolicitud='$last' ORDER  BY IDsp DESC ");
      $mostrar='';
@@ -73,7 +73,7 @@ class modeloseguircreacion{
    
    mysqli_query($cnx,"INSERT INTO `solicitudpiezas`(`IDsolicitud`, `IDpieza`, `cantidad`, `precio`, `total`, `codigo`, `nocompra`, `fecha_c`, `fecha_a`, `estatus`) VALUES ('$solicitud','$pieza','$cantidad','$precio','$total','$codigo','$ncompra','$fecha_c','$fecha_a',b'0')");
    $proceso=mysqli_insert_id($cnx);
-   mysqli_query($cnx,"INSERT INTO `proceso`(`IDsp`, `cantidad`, `estatus`) VALUES ('$proceso','$cantidad',b'0')"); 
+   mysqli_query($cnx,"INSERT INTO `proceso`(`IDsp`, `cantidad`, `estatus`) VALUES ('$proceso','0',b'0')"); 
     $cons=mysqli_query($cnx,"SELECT sp.IDsp,sp.IDsolicitud,piezas.IDpieza,piezas.nombre,sp.IDpieza,sp.precio,sp.cantidad,sp.codigo,sp.total,sp.nocompra FROM solicitudpiezas as sp INNER JOIN 
      piezas ON piezas.IDpieza = SP.IDpieza WHERE sp.IDsolicitud='$solicitud' ORDER  BY IDsp DESC ");
      $mostrar='';
