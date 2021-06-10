@@ -1,5 +1,5 @@
 <?php
-include("../models/empleadoModelo.php");
+include("../models/estadoactualModelo.php");
 
 class empleadoController{
   function consultar(){

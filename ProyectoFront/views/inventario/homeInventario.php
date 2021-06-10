@@ -1,5 +1,5 @@
 <?php 
-//	include('../../controllers/sesionadm.php');
+	include('../../controllers/sesionalmacenista.php');
 	include('../bases/baseHinventario.php');
 ?>
 <meta charset="utf-8">

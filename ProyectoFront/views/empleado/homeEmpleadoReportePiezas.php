@@ -1,12 +1,12 @@
 <?php 
-  include('../../controllers/sesionadm.php');
-  include('../bases/baseH.php');
+  include('../../controllers/sesionempleado.php');
+  include('../bases/baseHempleado.php');
 ?>
 <body >
 <section class="container pt-5 pb-5">
 	<div class="row">
 		<div class="col-lg-6">
-			<input type="search" name="" placeholder="Buscar pieza" id="busqueda" class="form-control">
+			<input type="search" name="" placeholder="Buscar pieza" id="busca" class="form-control">
 		</div>
 	</div>
 	<div class="table-responsive">

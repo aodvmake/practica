@@ -17,12 +17,13 @@
 			success:function(response){
 				$("#email").val("")
 				$("#pass").val("")
+				
 				switch(response){
 					case 'Empleado':
-						//window.location.href="views/cliente.php"
+						window.location.href="views/empleado/homeEmpleadoReportePiezas.php"
 					break;
 					case 'Almacenista':
-						//window.location.href="views/cliente.php"
+						window.location.href="views/inventario/homeInventario.php"
 					break;
 					case 'Administrador':
 						window.location.href="views/asistente/homeAsistente.php"

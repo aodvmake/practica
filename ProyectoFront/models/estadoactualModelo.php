@@ -9,12 +9,13 @@ class modeloconsultar{
        $mostrar='';
       
        if($consulta!=''){
-       $conp=mysqli_query($cnx,"SELECT piezas.nombre,sole.cantidad, proceso.cantidad as reporte,proceso.IDproceso
-       FROM proceso INNER JOIN solicitudpiezas AS sole
-       ON proceso.IDsp=sole.IDsp INNER JOIN piezas 
-       ON sole.IDpieza=piezas.IDpieza INNER JOIN solicitud
-       ON sole.IDsolicitud=solicitud.IDsolicitud
-       WHERE piezas.nombre LIKE '%".$consulta."%' AND solicitud.estatus='1' AND proceso.estatus='0'");
+       $conp=mysqli_query($cnx,"SELECT piezas.nombre,sole.cantidad, proceso.cantidad as reporte,proceso.IDproceso,datosempresa.nombre_e,sole.nocompra,sole.codigo
+        FROM proceso INNER JOIN solicitudpiezas AS sole
+        ON proceso.IDsp=sole.IDsp INNER JOIN piezas 
+        ON sole.IDpieza=piezas.IDpieza INNER JOIN solicitud
+        ON sole.IDsolicitud=solicitud.IDsolicitud INNER JOIN datosempresa
+        ON solicitud.IDempresa=datosempresa.IDempresa
+        WHERE piezas.nombre LIKE '%".$consulta."%' AND solicitud.estatus='1' AND proceso.estatus='1'");
        
        if(mysqli_num_rows($conp)!=0){
           while ($row=mysqli_fetch_array($conp)){
@@ -38,22 +39,26 @@ class modeloconsultar{
 
        }
        else{
-       $conp=mysqli_query($cnx,"SELECT piezas.nombre,sole.cantidad, proceso.cantidad as reporte,proceso.IDproceso
-       FROM proceso INNER JOIN solicitudpiezas AS sole
-       ON proceso.IDsp=sole.IDsp INNER JOIN piezas 
-       ON sole.IDpieza=piezas.IDpieza INNER JOIN solicitud
-       ON sole.IDsolicitud=solicitud.IDsolicitud
-       WHERE solicitud.estatus='1' AND proceso.estatus='0'");
+       $conp=mysqli_query($cnx,"SELECT piezas.nombre,sole.cantidad, proceso.cantidad as reporte,proceso.IDproceso,datosempresa.nombre_e,sole.nocompra,sole.codigo
+        FROM proceso INNER JOIN solicitudpiezas AS sole
+        ON proceso.IDsp=sole.IDsp INNER JOIN piezas 
+        ON sole.IDpieza=piezas.IDpieza INNER JOIN solicitud
+        ON sole.IDsolicitud=solicitud.IDsolicitud INNER JOIN datosempresa
+        ON solicitud.IDempresa=datosempresa.IDempresa
+        WHERE solicitud.estatus='1' AND proceso.estatus='1'");
        
        if(mysqli_num_rows($conp)!=0){
           while ($row=mysqli_fetch_array($conp)){
                   $mostrar.='
                     <tr>
+                      <td>'.$row['nombre_e'].'</td>
                       <td>'.$row['nombre'].'</td>
+                      <td>'.$row['nocompra'].'</td>
+                      <td>'.$row['codigo'].'</td>
                       <td><input type="text" readonly class="form-control-plaintext" id="cantidad'.$row['IDproceso'].'" value="'.$row['cantidad'].'" oncontextmenu="return false" onkeydown="return false" ></td>
                       <td><progress value="'.$row['reporte'].'" max="'.$row['cantidad'].'"></td>
-                      <td><input type="number" class="form-control" id="caja'.$row['IDproceso'].'"></td>
                       <td><button class="btn btn-primary btn-actualizar" data-id="'.$row['IDproceso'].'">Actualizar</button></td>
+
                     </tr>';
             }
           }

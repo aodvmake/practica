@@ -12,32 +12,6 @@
       <span class="navbar-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Solicitud
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Crear Solicitud</a></li>
-            <li><a class="dropdown-item" href="homeAdminSolicitudCompraEditar.php">Editar Solicitud</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Reporte
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Estado actual</a></li>
-            <li><a class="dropdown-item" href="homeAdminReporteEstadoActualGanancias.php">Reporte de Ganancias</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link font-main" aria-current="page" href="homeAdminUsuarios.php">Usuarios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link font-main" aria-current="page" href="#">Uknown</a>
-        </li>
-      </ul>
 
       <ul class="navbar-nav mr-auto mb-lg-0">
       	<li class="nav-item pt-2-responsive">

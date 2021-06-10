@@ -19,9 +19,9 @@ class modeloguardar{
           }
 
          switch ($rows) {
-            case 'Cliente': echo "Almacenista";
+            case 'Almacenista': echo "Almacenista";
          		break;
-            case 'Cliente': echo "Empleado";
+            case 'Empleado': echo "Empleado";
             break;
          	  case 'Administrador': echo "Administrador";
 				    break;
