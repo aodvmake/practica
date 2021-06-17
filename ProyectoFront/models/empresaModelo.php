@@ -153,10 +153,10 @@ class modeloconsultareditar{
       while($row=mysqli_fetch_array($queryconsult)){
         $dataArray = array(
           "id"=>$row['IDempresa'],
-          "nombre"=>$row['nombre_e'],
+          "nombre"=>utf8_encode($row['nombre_e']),
           "telefono"=>$row['telefono_e'],
           "correo"=>$row['correo'],
-          "ubicacion"=>$row['ubicacion']
+          "ubicacion"=>utf8_encode($row['ubicacion'])
         );
       }
     }

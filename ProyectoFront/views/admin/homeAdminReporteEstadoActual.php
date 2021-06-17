@@ -14,7 +14,8 @@
 <section>
   <div class="card">
     <div class="card-header p-4">
-      <div class="row">
+      <input type="search" name="" placeholder="Buscar pieza" id="busca" class="form-control">
+      <div class="row">  
     </div>    
    <hr>
       <div class="row">
@@ -30,6 +31,8 @@
                   <th>Cantidad</th>
                   <th>Progreso</th>
                   <th></th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody id="resultado">
@@ -44,8 +47,8 @@
   </div>
 </section>
 <br><br>
-                    <button type="button" class="btn btn-primary "><i class="fas fa-check-circle"></i></button>
-                    <i class="fas fa-check-circle"></i>
+
+                    
 <section class="container">
   <p class="h4">Estado actual</p>
 </section>
@@ -53,6 +56,7 @@
 <section>
   <div class="card">
     <div class="card-header p-4">
+      <input type="search" name="" placeholder="Buscar pieza" id="buscapieza" class="form-control">
       <div class="row">
     </div>    
    <hr>
@@ -62,16 +66,18 @@
             <table class="table table-stripped">
               <thead>
                 <tr>
-                  <th>Nombre de la pieza</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
+                  <th>Empresa</th>
+                  <th>Pieza</th>
+                  <th>No Compra</th>
                   <th>Código</th>
-                  <th>Total</th>
-                  <th>Número de compra</th>
-                  <th>Estado actual</th>
+                  <th>Cantidad</th>
+                  <th>Progreso</th>
+                  <th>Piezas elaboradas</th>
+                  <th>Fecha de compromiso</th>
+                  <th></th>
                 </tr>
               </thead>
-              <tbody id="resultado">
+              <tbody id="resultadopieza">
                 <tr>
                   <td><input type="text" name="" class="form-control"></td>
                   <td><input type="number" min="0" name="" class="form-control"></td>

@@ -11,8 +11,13 @@ class empleadoController{
     $cantidad=$_POST['caja'];
     $id=$_POST['btnactualizar'];
     $comparacion=$_POST['cantidad'];
+    if ($cantidad>'0' && $cantidad<=$comparacion) {
     $objetos = new modeloactualizar();
-    echo $objetos->actualizarnumero($id,$cantidad,$comparacion);
+    echo $objetos->actualizarnumero($id,$cantidad,$comparacion);   
+    }
+    else{
+    echo "La cantidad no puede ser menor ni mayor a la cantidad";
+   }
   }
 }
 

@@ -4,12 +4,12 @@ $(document).ready(function(){
 	   var caja =$("#caja"+btnactualizar).val()
        var cantidad= $("#cantidad"+btnactualizar).val()
 
-        if(caja>0 && caja<=cantidad){
-	   		var parametros = Object.freeze({
+	   	   var parametros = Object.freeze({
 		     'caja':caja,
 		     'cantidad':cantidad,
 		     'btnactualizar':btnactualizar,
 		     'request':'btnactualizar',
+
 			});
 
 			$.ajax({
@@ -22,12 +22,8 @@ $(document).ready(function(){
                 alert(response);
                 document.location.reload();
 				}
-			}); 
-		}
-		else{
-			alert("La cantidad ingresada tiene que ser menor a la cantidad especificada");
-		}
-	    });
+			});    
+	 });
 //
 });
 

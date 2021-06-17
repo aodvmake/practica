@@ -3,10 +3,10 @@ include("../models/empresaModelo.php");
 
 class empresaController{
   function agregar(){
-    $nombre= $_POST['nombre'];
+    $nombre=utf8_decode($_POST['nombre']);
     $telefono= $_POST['telefono'];
     $email= $_POST['email'];
-    $ubicacion= $_POST['ubicacion'];
+    $ubicacion=utf8_decode($_POST['ubicacion']);
   
     $objetos=new modeloguardar();
     echo $objetos->guardar($nombre,$telefono,$email,$ubicacion);
@@ -33,10 +33,10 @@ class empresaController{
     echo $objetos->altaempresa($altaempresa);
   }
   function editarempresa(){
-    $nombre= $_POST['nombre'];
+    $nombre=utf8_decode($_POST['nombre']);
     $telefono= $_POST['telefono'];
     $email= $_POST['email'];
-    $ubicacion= $_POST['ubicacion'];
+    $ubicacion=utf8_decode($_POST['ubicacion']);
     $editar=$_POST['editar'];
     $objetos= new modeloeditar();
     echo $objetos->editar($editar,$nombre,$telefono,$email,$ubicacion);

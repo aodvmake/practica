@@ -18,7 +18,7 @@
             Solicitud
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Crear Solicitud</a></li>
+            <li><a class="dropdown-item" href="homeAdminSolicitudCompraCrear.php">Crear Solicitud</a></li>
             <li><a class="dropdown-item" href="homeAdminSolicitudCompraEditar.php">Editar Solicitud</a></li>
           </ul>
         </li>
@@ -27,7 +27,7 @@
             Reporte
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Estado actual</a></li>
+            <li><a class="dropdown-item" href="homeAdminReporteEstadoActual.php">Estado actual</a></li>
             <li><a class="dropdown-item" href="homeAdminReporteEstadoActualGanancias.php">Reporte de Ganancias</a></li>
           </ul>
         </li>
@@ -48,8 +48,7 @@
             <img src="../../img/userDefault.jpg" class="imgUserAdmin">
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
             <li><a class="dropdown-item" href="../../controllers/cerrarsession.php">Salir</a></li>
           </ul>
         </li>
