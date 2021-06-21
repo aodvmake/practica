@@ -15,15 +15,14 @@
 
       <ul class="navbar-nav mr-auto mb-lg-0">
       	<li class="nav-item pt-2-responsive">
-          <a class="nav-link font-main" aria-current="page" href="homeAdmin.php"><?php echo utf8_encode($_SESSION['trabajador']); ?></a>
+          <a class="nav-link font-main" aria-current="page" href="homeEmpleadoReportePiezas.php"><?php echo utf8_encode($_SESSION['trabajador']); ?></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="../../img/userDefault.jpg" class="imgUserAdmin">
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="editar.php">Perfil</a></li>
             <li><a class="dropdown-item" href="../../controllers/cerrarsession.php">Salir</a></li>
           </ul>
         </li>

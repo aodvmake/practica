@@ -34,9 +34,6 @@
         <li class="nav-item">
           <a class="nav-link font-main" aria-current="page" href="homeAdminUsuarios.php">Usuarios</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link font-main" aria-current="page" href="#">Uknown</a>
-        </li>
       </ul>
 
       <ul class="navbar-nav mr-auto mb-lg-0">
@@ -48,7 +45,7 @@
             <img src="../../img/userDefault.jpg" class="imgUserAdmin">
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="editar.php">Perfil</a></li>
             <li><a class="dropdown-item" href="../../controllers/cerrarsession.php">Salir</a></li>
           </ul>
         </li>

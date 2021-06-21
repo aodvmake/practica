@@ -1,5 +1,5 @@
 <?php 
-	//include('../../controllers/sesionadm.php');
+	include('../../controllers/sesionasistente.php');
 	include('../bases/baseHasistente.php');
 ?>
 <meta charset="utf-8">
